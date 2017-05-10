@@ -14,7 +14,7 @@ class HomeScreen extends React.Component {
   render () {
     const {navigate} = this.props.navigation
 
-    const user = 'Slavomir'
+    const user = 'slavomirvojacek'
 
     return (
       <View style={ViewStyle.padded}>
