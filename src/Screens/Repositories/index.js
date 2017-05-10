@@ -12,7 +12,7 @@ import TextStyle from '../../GlobalStyles/Text'
 
 class RepositoriesScreen extends React.Component {
   static navigationOptions = ({navigation}) => ({
-    title: `${navigation.state.params.user}’s Repositories`,
+    title: 'List Repositories',
   })
 
   timeout = null
@@ -27,12 +27,15 @@ class RepositoriesScreen extends React.Component {
       dataSource: ds.cloneWithRows([]),
       fetching: false,
       error: None,
-      username: params.user
+      username: params.defaultUserName
     }
   }
 
   componentDidMount () {
-    this.fetchRepos(this.state.username)
+    this.state.username.match({
+      some: _ => this.fetchRepos(this.state.username),
+      none: null
+    })
   }
 
   componentWillUnmount () {
@@ -40,16 +43,26 @@ class RepositoriesScreen extends React.Component {
     this.timeout = null
   }
 
-  fetchRepos (username) {
-    this.requestRepos(username)
+  fetchRepos (text) {
+    const username = text.length === 0 ? None : Some(text)
 
-    fetch(`https://api.github.com/users/${username}/repos`)
-      .then(response => response
-        .json()
-        .then(_ => response.ok ? Ok(_) : Err(_))
-      )
-      .then(_ => _.is_ok() ? this.receiveReposOk(_.unwrap()) : this.receiveReposErr(_.unwrap_err()))
-      .catch(console.error)
+    username.match({
+      some: _ => {
+        this.requestRepos(username)
+
+        fetch(`https://api.github.com/users/${_}/repos`)
+          .then(response => response
+            .json()
+            .then(data => response.ok ? Ok(data) : Err(data))
+          )
+          .then(data => data.is_ok() ? this.receiveReposOk(data.unwrap()) : this.receiveReposErr(data.unwrap_err()))
+          .catch(console.error)
+      },
+      none: () => this.setState(prevState => {
+        const dataSource = prevState.dataSource.cloneWithRows([])
+        return {dataSource, username, error: None}
+      })
+    })
   }
 
   requestRepos (username) {
@@ -67,11 +80,9 @@ class RepositoriesScreen extends React.Component {
     this.setState(prevState => ({error: Some(err.message).or(Some('Unknown error occurred')), fetching: false}))
   }
 
-  onChangeText (username) {
+  onChangeText (text) {
     clearTimeout(this.timeout)
-
-    if (username.length > 2)
-      this.timeout = setTimeout(() => this.fetchRepos(username), 500)
+    this.timeout = setTimeout(() => this.fetchRepos(text), 500)
   }
 
   render () {
@@ -80,13 +91,16 @@ class RepositoriesScreen extends React.Component {
     return (
       <View style={[ViewStyle.padded, FlexStyle.column]}>
         <Header>
-          <H2 style={TextStyle.alignCenter}>Listing {username}’s repositories</H2>
+          <H2 style={TextStyle.alignCenter}>{username.match({
+            some: _ => `Listing ${_}’s repositories`,
+            none: 'List repositories'
+          })}</H2>
         </Header>
 
         <TextInput
           style={{height: 40}}
           placeholder="Type GitHub username here..."
-          defaultValue={username}
+          defaultValue={username.unwrap_or('')}
           onChangeText={text => this.onChangeText(text.toLowerCase())}
         />
 
@@ -96,7 +110,10 @@ class RepositoriesScreen extends React.Component {
               ? <P>Loading...</P> : error.match({
                 some: _ => <P>Oops! {_}</P>,
                 none: dataSource.getRowCount() === 0
-                  ? <P>No repositories for user {username}</P>
+                  ? username.match({
+                    some: u => <P>No repositories for user {u}</P>,
+                    none: null
+                  })
                   : <ListView
                     dataSource={this.state.dataSource}
                     renderRow={(rowData) => <P>{rowData.name}</P>}/>
