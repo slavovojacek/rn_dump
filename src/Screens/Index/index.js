@@ -20,11 +20,11 @@ class HomeScreen extends React.Component {
       <View style={ViewStyle.padded}>
         <H1 style={TextStyle.alignCenter}>Hello, World!</H1>
 
-        <P style={TextStyle.alignCenter}>By clicking the button below you will get a list of {user}'s repositories.</P>
+        <P style={TextStyle.alignCenter}>By clicking the button below you will get a list of {user}’s repositories.</P>
 
         <Button
           onPress={() => navigate('Repositories', {user})}
-          title={`View ${user}'s repositories`}
+          title={`View ${user}’s repositories`}
         />
       </View>
     )

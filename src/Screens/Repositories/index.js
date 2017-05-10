@@ -10,7 +10,7 @@ import FlexStyle from '../../GlobalStyles/Flex'
 
 class RepositoriesScreen extends React.Component {
   static navigationOptions = ({navigation}) => ({
-    title: `${navigation.state.params.user}'s Repositories`,
+    title: `${navigation.state.params.user}’s Repositories`,
   })
 
   constructor (props) {
@@ -46,7 +46,7 @@ class RepositoriesScreen extends React.Component {
     return (
       <View style={[ViewStyle.padded, FlexStyle.column]}>
         <Header>
-          <H2>{params.user}'s repositories</H2>
+          <H2>{params.user}’s repositories</H2>
         </Header>
 
         <View style={{flex: 1}}>
