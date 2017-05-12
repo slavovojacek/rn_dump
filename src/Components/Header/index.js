@@ -4,8 +4,10 @@ import { View } from 'react-native'
 import Style from './stylesheet'
 import FlexStyle from '../../GlobalStyles/Flex'
 
-const Component = (props) => (
-  <View style={[Style.header, FlexStyle.centerHorizontally, FlexStyle.centerVertically]}>{props.children}</View>
+const Component = ({style, ...rest}) => (
+  <View style={[Style.header, FlexStyle.centerVertically, FlexStyle.centerHorizontally, style]}>
+    {rest.children}
+  </View>
 )
 
 export default Component

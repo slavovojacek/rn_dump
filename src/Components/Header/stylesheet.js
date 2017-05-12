@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native'
 
 const Style = StyleSheet.create({
   header: {
-    height: 50,
+    backgroundColor: 'yellow',
+    height: 50
   }
 })
 

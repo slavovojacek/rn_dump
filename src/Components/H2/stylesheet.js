@@ -5,7 +5,8 @@ const Style = StyleSheet.create({
     color: 'black',
     fontWeight: 'bold',
     fontSize: 24,
-    paddingBottom: 10
+    padding: 0,
+    margin: 0
   }
 })
 

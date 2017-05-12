@@ -5,10 +5,22 @@ const Style = StyleSheet.create({
     flexDirection: 'column',
   },
   centerVertically: {
-    justifyContent: 'center'
+    alignItems: 'center'
   },
   centerHorizontally: {
-    alignItems: 'center'
+    justifyContent: 'center'
+  },
+  left: {
+    justifyContent: 'flex-start'
+  },
+  right: {
+    justifyContent: 'flex-start'
+  },
+  top: {
+    alignItems: 'flex-start'
+  },
+  bottom: {
+    alignItems: 'flex-end'
   }
 })
 

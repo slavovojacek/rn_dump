@@ -4,6 +4,7 @@ import { None, Some, Ok, Err } from 'tsp-monads'
 
 import H2 from '../../Components/H2'
 import P from '../../Components/P'
+import Link from '../../Components/Link'
 import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import ViewStyle from '../../GlobalStyles/View'
@@ -90,36 +91,36 @@ class RepositoriesScreen extends React.Component {
 
     return (
       <View style={[ViewStyle.padded, FlexStyle.column]}>
-        <Header>
-          <H2 style={TextStyle.alignCenter}>{username.match({
-            some: _ => `Listing ${_}’s repositories`,
-            none: 'List repositories'
-          })}</H2>
+        <Header style={{backgroundColor: 'yellow'}}>
+          <View style={{width: '100%'}}>
+            <H2>{username.match({
+              some: _ => `Listing ${_}’s repositories`,
+              none: 'List repositories'
+            })}</H2>
+          </View>
         </Header>
 
         <TextInput
-          style={{height: 40}}
+          style={{height: 40, marginTop: 10}}
           placeholder="Type GitHub username here..."
           defaultValue={username.unwrap_or('')}
           onChangeText={text => this.onChangeText(text.toLowerCase())}
         />
 
-        <View style={{flex: 1}}>
-          <ScrollView >
-            {fetching
-              ? <P>Loading...</P> : error.match({
-                some: _ => <P>Oops! {_}</P>,
-                none: dataSource.getRowCount() === 0
-                  ? username.match({
-                    some: u => <P>No repositories for user {u}</P>,
-                    none: null
-                  })
-                  : <ListView
-                    dataSource={this.state.dataSource}
-                    renderRow={(rowData) => <P>{rowData.name}</P>}/>
-              })}
-          </ScrollView>
-        </View>
+        <ScrollView contentContainerStyle={{flex: 1, paddingVertical: 10}}>
+          {fetching
+            ? <P>Loading...</P> : error.match({
+              some: _ => <P>Oops! {_}</P>,
+              none: dataSource.getRowCount() === 0
+                ? username.match({
+                  some: u => <P>No repositories for user {u}</P>,
+                  none: null
+                })
+                : <ListView
+                  dataSource={this.state.dataSource}
+                  renderRow={(rowData) => <Link url={rowData.html_url}>{rowData.name}</Link>}/>
+            })}
+        </ScrollView>
 
         <Footer>
           <P>Some footer action</P>
