@@ -9,7 +9,6 @@ import Header from '../../Components/Header'
 import Footer from '../../Components/Footer'
 import ViewStyle from '../../GlobalStyles/View'
 import FlexStyle from '../../GlobalStyles/Flex'
-import TextStyle from '../../GlobalStyles/Text'
 
 class RepositoriesScreen extends React.Component {
   static navigationOptions = ({navigation}) => ({
@@ -101,7 +100,7 @@ class RepositoriesScreen extends React.Component {
         </Header>
 
         <TextInput
-          style={{height: 40, marginTop: 10}}
+          style={{height: 40, marginTop: 10, fontSize: 18}}
           placeholder="Type GitHub username here..."
           defaultValue={username.unwrap_or('')}
           onChangeText={text => this.onChangeText(text.toLowerCase())}
@@ -118,7 +117,7 @@ class RepositoriesScreen extends React.Component {
                 })
                 : <ListView
                   dataSource={this.state.dataSource}
-                  renderRow={(rowData) => <Link url={rowData.html_url}>{rowData.name}</Link>}/>
+                  renderRow={(rowData) => <P><Link url={rowData.html_url}>{rowData.name}</Link></P>}/>
             })}
         </ScrollView>
 

@@ -4,7 +4,8 @@ const Style = StyleSheet.create({
   p: {
     color: 'black',
     fontWeight: 'normal',
-    fontSize: 16,
+    fontSize: 18,
+    lineHeight: 28
   }
 })
 

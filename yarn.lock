@@ -1501,6 +1501,10 @@ find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+flow-bin@0.42.0:
+  version "0.42.0"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.42.0.tgz#05dd754b6b052de7b150f9210e2160746961e3cf"
+
 for-in@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/for-in/-/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
@@ -2984,6 +2988,10 @@ react-native-tab-view@^0.0.61:
   resolved "https://registry.yarnpkg.com/react-native-tab-view/-/react-native-tab-view-0.0.61.tgz#9f5446c9ad33158b87f0bccf5004fbff79ca1f92"
   dependencies:
     prop-types "^15.5.8"
+
+react-native-touch-id@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-touch-id/-/react-native-touch-id-3.0.0.tgz#bfeff30d06bacf715f997631cd58e5d2bc226218"
 
 react-native@0.44.0:
   version "0.44.0"

@@ -1,6 +1,9 @@
 import { StyleSheet } from 'react-native'
 
 const Style = StyleSheet.create({
+  flex1: {
+    flex: 1
+  },
   column: {
     flexDirection: 'column',
   },
