@@ -1,0 +1,8 @@
+{
+    "sourceBase":"src",
+    "testBase":"src",
+    "dumbPath":"Components",
+    "formPath":"Forms",
+    "smartPath":"Containers",
+    "fileCasing":"pascal"
+}
