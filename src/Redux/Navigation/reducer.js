@@ -11,6 +11,7 @@ const initialState = Navigation
   .getStateForAction(Navigation.router.getActionForPathAndParams('Login'))
 
 export default (state = initialState, action) => {
+  console.log(action)
   const nextState = Navigation.router.getStateForAction(action, state)
   // Simply return the original `state` if `nextState` is null or undefined.
   return nextState || state

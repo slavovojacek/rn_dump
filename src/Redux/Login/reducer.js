@@ -10,7 +10,7 @@ const initialState = {
 }
 
 const reducer = typeToReducer({
-  [ apiFetch().type ]: {
+  [ 'API_FETCH' ]: {
     PENDING: () => ({
       ...initialState,
       isPending: true
