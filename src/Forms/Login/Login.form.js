@@ -5,7 +5,7 @@ import { reduxForm, Field } from 'redux-form'
 
 const propTypes = {
   onSubmit: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
 }
 
 const renderField = ({
@@ -23,22 +23,28 @@ const renderField = ({
 
 const required = value => (value ? undefined : 'Required')
 
-let <%= pascalEntityName %>Form = ({pristine, submitting, handleSubmit, onSubmit, style}) => {
+let LoginForm = ({pristine, submitting, handleSubmit, onSubmit, style}) => {
   return (
     <View {...style}>
-      <Field name="someText"
+      <Field name="email"
              component={renderField}
-             type="text"
-             label="Some Text"
+             type="email"
+             label="Email"
+             validate={[required]}/>
+      <Field name="password"
+             component={renderField}
+             type="password"
+             label="Password"
              validate={[required]}/>
       <Button title="Submit" onPress={handleSubmit(onSubmit)} disabled={pristine || submitting}/>
     </View>
   )
 }
 
-<%= pascalEntityName %>Form.propTypes = propTypes
-<%= pascalEntityName %>Form = reduxForm({
-  form: '<%= pascalEntityName %>',
-})(<%= pascalEntityName %>Form)
+LoginForm.propTypes = propTypes
+LoginForm = reduxForm({
+  form: 'Login',
+  // destroyOnUnmount: true
+})(LoginForm)
 
-export default <%= pascalEntityName %>Form
+export default LoginForm

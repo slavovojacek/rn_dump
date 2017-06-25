@@ -8,9 +8,8 @@ export const apiFetchFulfilled = createAction('API_FETCH_FULFILLED')
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 function* fetchUser (action) {
   try {
-    const user = yield call((username) => new Promise(resolve => {
-      resolve({ok: true, user: {name: username}})
-    }), action.payload)
+    const user = yield call((username) => Promise
+      .resolve({ok: true, user: {name: username}}, action.payload))
     yield put(apiFetchFulfilled(user))
   } catch (e) {
     yield put(apiFetchRejected(e.message))

@@ -2,8 +2,8 @@ import React from 'react'
 import { Provider, connect } from 'react-redux'
 import { addNavigationHelpers } from 'react-navigation'
 
-import { Navigation } from './Redux/Navigation/reducer'
 import store from './state'
+import { Navigation } from './Redux/Navigation/reducer'
 
 class App extends React.Component {
   render () {

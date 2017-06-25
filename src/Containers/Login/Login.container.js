@@ -1,5 +1,5 @@
 /*
-    USE AND INTERFACE DOCUMENTATION GOES AT TOP OF FILE
+ USE AND INTERFACE DOCUMENTATION GOES AT TOP OF FILE
  */
 
 import React, { Component } from 'react'
@@ -9,23 +9,28 @@ import { connect } from 'react-redux'
 
 import styles from './Login.container.styles'
 import { apiFetch } from '../../Redux/Login/saga'
+import LoginForm from '../../Forms/Login/Login.form'
 
 export class LoginContainer extends Component {
-  componentDidMount() {
+  componentDidMount () {
     this.props.login('slavomirvojacek')
   }
 
-  render() {
+  onSignIn = (values) => {
+    console.log(values)
+  }
+
+  render () {
     return (
-      <View>
-        <Text>{JSON.stringify(this.props.loginState)}</Text>
+      <View style={{flex: 1}}>
+        <LoginForm style={{flex: 1}} onSubmit={this.onSignIn}/>
+        <Text style={{flex: 1}}>{JSON.stringify(this.props.loginState)}</Text>
       </View>
     )
   }
 }
 
-LoginContainer.propTypes = {
-}
+LoginContainer.propTypes = {}
 
 const mapStateToProps = state => ({
   loginState: state.Login
