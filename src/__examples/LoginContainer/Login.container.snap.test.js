@@ -3,7 +3,7 @@ import React from 'react'
 import { LoginContainer } from './Login.container'
 
 import { assertSnapshots } from '../../TestUtils/snapshots'
-import { formStore } from '../../state'
+import { formOnlyStore } from '../../state'
 
 describe('LoginContainer Snapshots', () => {
   const config = [
@@ -14,5 +14,5 @@ describe('LoginContainer Snapshots', () => {
   ]
 
   config
-    .forEach(conf => assertSnapshots(LoginContainer, conf.props, conf.desc, formStore))
+    .forEach(conf => assertSnapshots(LoginContainer, conf.props, conf.desc, formOnlyStore))
 })

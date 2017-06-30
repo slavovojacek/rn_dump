@@ -14,12 +14,8 @@ const store = createStore(
 
 sagaMiddleware.run(sagas)
 
-const formStore = createStore(
-  formReducer, // applyMiddleware(sagaMiddleware)
-)
+const formOnlyStore = createStore(formReducer)
+const getMockStore = state => configureStore()(state)
 
-const mockStore = configureStore()
-const getMockStore = state => mockStore(state)
-
-export { formStore, getMockStore }
+export { formOnlyStore, getMockStore }
 export default store
