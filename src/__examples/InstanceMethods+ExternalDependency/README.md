@@ -1,7 +1,7 @@
 # Instance methods and External dependencies
 
-**This example demonstrates how component instance methods can be easily tested
-– often without having to use enzyme or any kind of renderer.**
+**This example demonstrates how to test component instance methods easily
+– without having to use enzyme or any other renderer.**
 
 ## Instance methods
 
@@ -16,15 +16,22 @@ class AwesomeComponent extends Component {
 }
 ```
 
-In our first test, we can see that to assert that `componentDidMount` calls `props.logIntoConsole`
-does not require prior render, or use of enzyme, or React's test renderer.
+Test:
+```javascript
+test('logIntoConsole gets called upon mount', () => {
+  let props = {...AwesomeComponent.defaultProps, logIntoConsole: jest.fn()}
+  let subject = new AwesomeComponent(props)
+  subject.componentDidMount()
+  expect(props.logIntoConsole).toHaveBeenCalled()
+})
+```
 
-It is as simple as instantiating our class with the props we wish to pass,
-and then calling the method (`componentDidMount`) on this instance.
+Please note that to assert that `componentDidMount` does indeed call `props.logIntoConsole`
+no prior render, or use of enzyme, or React's test renderer, is needed.
 
 ## External dependencies
 
-Example
+Example:
 ```javascript
 class AwesomeComponent extends Component {
   someHandler = value => {
@@ -35,6 +42,20 @@ class AwesomeComponent extends Component {
 }
 ```
 
+Test:
+```javascript
+test('someHandler calls SomethingExternal.awesomeMethod with correct argument', () => {
+  let awesomeMethod = jest
+    .spyOn(SomethingExternal, 'awesomeMethod')
+    .mockImplementation(jest.fn())
+  let subject = getInstance(AwesomeComponent.defaultProps)
+  subject.someHandler('val')
+  expect(awesomeMethod).toHaveBeenCalledWith('val')
+})
+```
+
 For cases such as the one shown in this example, consider spying on the "external" method
 (`SomethingExternal.awesomeMethod`) while also replacing the real implementation of 
 the method with a mock function (`jest.fn()`).
+
+Again, no prior render is necessary.
