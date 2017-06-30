@@ -6,8 +6,9 @@ export const apiFetchRejected = createAction('API_FETCH_REJECTED')
 export const apiFetchFulfilled = createAction('API_FETCH_FULFILLED')
 
 function* main (action) {
-  const respond = username => Promise
-    .resolve({ok: true, user: {name: username}})
+  const respond = username => new Promise((resolve, reject) => {
+    setTimeout(() => resolve({user: {name: username}}), 1500)
+  })
 
   try {
     const user = yield call(respond, action.payload)

@@ -1,15 +1,10 @@
-import PropTypes from 'prop-types'
 import React from 'react'
 import { View, Button } from 'react-native'
 import { reduxForm, Field } from 'redux-form'
 
+import Config from './Login.form.config'
 import renderField from '../../FormUtils/field'
 import { required } from '../../FormUtils/validation'
-
-const propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-  handleSubmit: PropTypes.func.isRequired
-}
 
 let LoginForm = ({pristine, submitting, handleSubmit, onSubmit, style}) => {
   return (
@@ -29,10 +24,12 @@ let LoginForm = ({pristine, submitting, handleSubmit, onSubmit, style}) => {
   )
 }
 
-LoginForm.propTypes = propTypes
+LoginForm.displayName = Config.displayName
+LoginForm.propTypes = Config.propTypes
+LoginForm.defaultProps = Config.defaultProps
+
 LoginForm = reduxForm({
-  form: 'Login',
-  // destroyOnUnmount: true
+  form: 'Login', // destroyOnUnmount: true
 })(LoginForm)
 
 export default LoginForm
