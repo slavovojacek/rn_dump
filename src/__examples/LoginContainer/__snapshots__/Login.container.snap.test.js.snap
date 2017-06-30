@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login Container UI renders correctly 1`] = `
+exports[`LoginContainer Snapshots renders correctly 1`] = `
 <View
   style={
     Object {
@@ -142,26 +142,13 @@ exports[`Login Container UI renders correctly 1`] = `
     allowFontScaling={true}
     disabled={false}
     ellipsizeMode="tail"
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-    onPress={[Function]}
     style={
       Object {
-        "color": "black",
         "flex": 1,
       }
     }
   >
     {"data":{},"isPending":false,"error":{}}
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    onPress={[Function]}
-  >
-    Show Warning
   </Text>
 </View>
 `;

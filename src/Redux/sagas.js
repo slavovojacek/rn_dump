@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects'
 
-import LoginSaga from './Login/saga'
+import LoginSaga from '../__examples/LoginContainer/lib/saga'
 
-export default function* rootSaga () {
+export default function* main () {
   yield all([
     LoginSaga()
   ])

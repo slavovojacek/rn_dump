@@ -3,10 +3,11 @@ import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 import { Some } from 'tsp-monads'
 
-import Config from './Login.config'
+import Config from './Login.container.config'
 import styles from './Login.container.styles'
-import { apiFetch } from '../../Redux/Login/saga'
-import LoginForm from '../../Forms/Login/Login.form'
+import { apiFetch } from './lib/saga'
+
+import LoginForm from '../LoginForm/Login.form'
 
 class LoginContainer extends Component {
   signIn = values => {
@@ -14,7 +15,7 @@ class LoginContainer extends Component {
       .and_then(_ => Some(_.email))
       .match({
         some: _ => this.props.login(_),
-        none: () => alert('Invalid values submitted, cannot call login')
+        none: () => { throw new Error('Developer mistake – cannot call login with no email!') }
       })
   }
 

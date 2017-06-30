@@ -1,6 +1,6 @@
 import { StackNavigator } from 'react-navigation'
 
-import LoginScreen from '../../Containers/Login/Login.container'
+import LoginScreen from '../../__examples/LoginContainer/Login.container'
 
 export const Navigation = StackNavigator({
   Login: {screen: LoginScreen}

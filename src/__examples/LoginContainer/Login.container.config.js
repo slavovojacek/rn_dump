@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import { initialState } from '../../Redux/Login/reducer'
+import { initialState } from './lib/reducer'
 
 const displayName = 'LoginContainer'
 
