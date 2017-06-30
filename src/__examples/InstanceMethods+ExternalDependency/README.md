@@ -58,4 +58,4 @@ For cases such as the one shown in this example, consider spying on the "externa
 (`SomethingExternal.awesomeMethod`) while also replacing the real implementation of 
 the method with a mock function (`jest.fn()`).
 
-Again, no prior render is necessary.
+Again, no prior render, use of enzyme, or other renderer is necessary.
