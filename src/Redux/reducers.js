@@ -9,3 +9,7 @@ export default combineReducers({
   form: FormReducer,
   Login: LoginReducer
 })
+
+export const formReducer = combineReducers({
+  form: FormReducer
+})

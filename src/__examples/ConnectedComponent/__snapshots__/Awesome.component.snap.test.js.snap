@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AwesomeComponent Snapshots renders correctly 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    N/A
+  </Text>
+</View>
+`;
+
+exports[`AwesomeComponent Snapshots renders correctly when not loading and username not present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    N/A
+  </Text>
+</View>
+`;
+
+exports[`AwesomeComponent Snapshots renders correctly when not loading and username present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    John Doe
+  </Text>
+</View>
+`;

@@ -1,18 +1,25 @@
 import { createStore, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
+import configureStore from 'redux-mock-store'
 
-import reducers from './Redux/reducers'
+import reducers, { formReducer } from './Redux/reducers'
 import sagas from './Redux/sagas'
 
-// create the saga middleware
 const sagaMiddleware = createSagaMiddleware()
-// mount it on the Store
+
 const store = createStore(
   reducers,
   applyMiddleware(sagaMiddleware)
 )
 
-// then run the saga
 sagaMiddleware.run(sagas)
 
+const formStore = createStore(
+  formReducer, // applyMiddleware(sagaMiddleware)
+)
+
+const mockStore = configureStore()
+const getMockStore = state => mockStore(state)
+
+export { formStore, getMockStore }
 export default store

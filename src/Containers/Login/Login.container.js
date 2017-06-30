@@ -1,43 +1,41 @@
-/*
- USE AND INTERFACE DOCUMENTATION GOES AT TOP OF FILE
- */
-
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 
+import Config from './Login.config'
 import styles from './Login.container.styles'
 import { apiFetch } from '../../Redux/Login/saga'
 import LoginForm from '../../Forms/Login/Login.form'
 
-export class LoginContainer extends Component {
-  componentDidMount () {
-    this.props.login('slavomirvojacek')
-  }
-
-  onSignIn = (values) => {
-    console.log(values)
+class LoginContainer extends Component {
+  onSignIn = values => {
+    this.props.login(values)
   }
 
   render () {
     return (
-      <View style={{flex: 1}}>
-        <LoginForm style={{flex: 1}} onSubmit={this.onSignIn}/>
-        <Text style={{flex: 1}}>{JSON.stringify(this.props.loginState)}</Text>
+      <View style={styles.container}>
+        <LoginForm style={styles.container} onSubmit={this.onSignIn}/>
+
+        <Text style={styles.container}>
+          {JSON.stringify(this.props.loginState)}
+        </Text>
       </View>
     )
   }
 }
 
-LoginContainer.propTypes = {}
+LoginContainer.displayName = Config.displayName
+LoginContainer.propTypes = Config.propTypes
+LoginContainer.defaultProps = Config.defaultProps
 
-const mapStateToProps = state => ({
-  loginState: state.Login
+export const mapStateToProps = ({Login}) => ({
+  loginState: Login
 })
 
 const mapDispatchToProps = dispatch => ({
-  login: (username) => dispatch(apiFetch(username))
+  login: username => dispatch(apiFetch(username))
 })
 
+export { LoginContainer }
 export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer)

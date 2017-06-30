@@ -1,22 +1,27 @@
 import React from 'react'
+import { Text } from 'react-native'
 import { shallow } from 'enzyme'
-import { LoginContainer } from './Login.container'
+import { Some } from 'tsp-monads'
 
-describe('Login Container', () => {
-  let _spies = {};
-  let _props, _wrapper;
+import { mapStateToProps } from './Login.container'
+import LoginContainerMock from './Login.container.mock'
+import { initialState as LoginState } from '../../Redux/Login/reducer'
+import SomethingExternal from './SomethingExternal'
+
+describe('LoginContainer', () => {
+  let props
+  const getInstance = p => new LoginContainerMock(p)
 
   beforeEach(() => {
-    _props = {
-      update: _spies.update = jest.fn(),
-    };
-    _wrapper = shallow(
-      <LoginContainer {..._props} />
-    );
-  });
+    props = {...LoginContainerMock.defaultProps, login: jest.fn()}
+  })
 
-  test('Should render as a <View>.', () => {
-    expect(_wrapper.is('View')).toBe(true);
-  });
+  // describe('Instance', () => {
+  // })
 
-});
+  // describe('DOM interaction', () => {
+  // })
+
+  // describe('connect', () => {
+  // })
+})

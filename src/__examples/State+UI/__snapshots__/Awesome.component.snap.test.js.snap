@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AwesomeComponent Snapshots renders correctly 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Click to change the color of this text to blue
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+  >
+    Show odd warning
+  </Text>
+</View>
+`;
+
+exports[`AwesomeComponent Snapshots renders correctly when color is red 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Click to change the color of this text to blue
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+  >
+    Show odd warning
+  </Text>
+</View>
+`;
+
+exports[`AwesomeComponent Snapshots renders correctly when isWarningVisible is true 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "black",
+      }
+    }
+  >
+    Click to change the color of this text to blue
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+  >
+    Hide this odd warning
+  </Text>
+</View>
+`;
