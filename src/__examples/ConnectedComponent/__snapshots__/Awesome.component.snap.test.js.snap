@@ -7,6 +7,12 @@ exports[`AwesomeComponent Snapshots renders correctly 1`] = `
     allowFontScaling={true}
     disabled={false}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "blue",
+        "fontSize": 20,
+      }
+    }
   >
     N/A
   </Text>
@@ -20,6 +26,12 @@ exports[`AwesomeComponent Snapshots renders correctly when not loading and usern
     allowFontScaling={true}
     disabled={false}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "blue",
+        "fontSize": 20,
+      }
+    }
   >
     N/A
   </Text>
@@ -33,6 +45,12 @@ exports[`AwesomeComponent Snapshots renders correctly when not loading and usern
     allowFontScaling={true}
     disabled={false}
     ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "blue",
+        "fontSize": 20,
+      }
+    }
   >
     John Doe
   </Text>

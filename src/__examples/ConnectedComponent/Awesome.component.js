@@ -3,9 +3,14 @@ import { View, Text } from 'react-native'
 import { connect } from 'react-redux'
 
 import Config from './Awesome.component.config'
+import styles from './Awesome.component.styles'
 import { apiFetch } from './lib/saga'
 
 class AwesomeComponent extends Component {
+  static Loading = <Text>Loading...</Text>
+  static Error = e => <Text style={styles.error}>{e}</Text>
+  static Username = u => <Text style={styles.username}>{u.unwrap_or('N/A')}</Text>
+
   componentDidMount () {
     this.props.apiFetch('John Doe')
   }
@@ -16,9 +21,9 @@ class AwesomeComponent extends Component {
     return (
       <View>
         {showLoading
-          ? <Text>Loading...</Text> : error.match({
-            some: _ => <Text>{_}</Text>,
-            none: <Text>{username.unwrap_or('N/A')}</Text>
+          ? AwesomeComponent.Loading : error.match({
+            some: AwesomeComponent.Error,
+            none: AwesomeComponent.Username(username)
           })}
       </View>
     )

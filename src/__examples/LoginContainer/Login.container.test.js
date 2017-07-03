@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LoginContainer from './Login.container.mock'
+import { LoginContainer } from './Login.container'
 
 describe('LoginContainer', () => {
   let props

@@ -1,3 +1,6 @@
 import { StyleSheet } from 'react-native'
 
-export default StyleSheet.create({})
+export default StyleSheet.create({
+  error: {color: 'red'},
+  username: {color: 'blue', fontSize: 20}
+})

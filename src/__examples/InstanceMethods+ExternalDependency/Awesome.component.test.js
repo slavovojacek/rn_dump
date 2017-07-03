@@ -1,6 +1,6 @@
 import React from 'react'
 
-import AwesomeComponent from './Awesome.component.mock'
+import { AwesomeComponent } from './Awesome.component'
 import SomethingExternal from './lib/SomethingExternal'
 
 const getInstance = p => new AwesomeComponent(p)
