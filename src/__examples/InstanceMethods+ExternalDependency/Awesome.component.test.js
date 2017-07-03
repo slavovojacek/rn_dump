@@ -2,8 +2,14 @@ import React from 'react'
 
 import { AwesomeComponent } from './Awesome.component'
 import SomethingExternal from './lib/SomethingExternal'
+import SomethingElseExternal from './lib/SomethingElseExternal'
 
 const getInstance = p => new AwesomeComponent(p)
+
+jest
+  .mock('./lib/SomethingElseExternal', () => ({
+    anotherAwesomeMethod: jest.fn()
+  }))
 
 describe('AwesomeComponent', () => {
   let props, awesomeMethod
@@ -23,10 +29,11 @@ describe('AwesomeComponent', () => {
       expect(props.logIntoConsole).toHaveBeenCalled()
     })
 
-    test('someHandler calls SomethingExternal.awesomeMethod with correct argument', () => {
+    test('someHandler calls SomethingExternal.awesomeMethod and SomethingElseExternal.awesomeMethod with correct argument', () => {
       let subject = getInstance(props)
       subject.someHandler('val')
       expect(awesomeMethod).toHaveBeenCalledWith('val')
+      expect(SomethingElseExternal.anotherAwesomeMethod).toHaveBeenCalledWith('val')
     })
   })
 

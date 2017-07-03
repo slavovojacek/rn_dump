@@ -1,3 +1,3 @@
 export default {
-  awesomeMethod: (someArg) => null
+  awesomeMethod: someArg => null
 }
