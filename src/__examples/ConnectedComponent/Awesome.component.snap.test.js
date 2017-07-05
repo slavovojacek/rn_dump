@@ -13,6 +13,13 @@ describe('AwesomeComponent Snapshots', () => {
     {
       props: {
         ...AwesomeComponent.defaultProps,
+        showLoading: true
+      },
+      desc: 'renders correctly when loading'
+    },
+    {
+      props: {
+        ...AwesomeComponent.defaultProps,
         username: Some('John Doe'),
         showLoading: false
       },

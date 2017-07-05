@@ -19,6 +19,19 @@ exports[`AwesomeComponent Snapshots renders correctly 1`] = `
 </View>
 `;
 
+exports[`AwesomeComponent Snapshots renders correctly when loading 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    Loading...
+  </Text>
+</View>
+`;
+
 exports[`AwesomeComponent Snapshots renders correctly when not loading and username not present 1`] = `
 <View>
   <Text

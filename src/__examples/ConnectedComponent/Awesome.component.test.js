@@ -1,8 +1,9 @@
 import React from 'react'
 import { Some } from 'tsp-monads'
 
-import { AwesomeComponent, mapStateToProps } from './Awesome.component'
+import { AwesomeComponent, mapStateToProps, mapDispatchToProps } from './Awesome.component'
 import { initialState } from './lib/reducer'
+import { apiFetch } from './lib/saga'
 
 const getInstance = p => new AwesomeComponent(p)
 
@@ -46,6 +47,13 @@ describe('AwesomeComponent', () => {
         expect(subject.username.unwrap()).toEqual(data.map(_ => _.user.name).unwrap())
         expect(subject.error).toEqual(state.error)
         expect(subject.showLoading).toEqual(state.isPending)
+      })
+    })
+
+    describe('mapDispatchToProps', () => {
+      test('correctly maps the apiFetch method', () => {
+        const subject = mapDispatchToProps
+        expect(subject.apiFetch).toEqual(apiFetch)
       })
     })
   })

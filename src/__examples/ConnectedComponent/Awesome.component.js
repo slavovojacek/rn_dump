@@ -41,9 +41,9 @@ const mapStateToProps = ({AwesomeState}) => ({
   showLoading: AwesomeState.isPending
 })
 
-const mapDispatchToProps = dispatch => ({
-  apiFetch: user => dispatch(apiFetch(user.name))
-})
+const mapDispatchToProps = {
+  apiFetch
+}
 
 export { AwesomeComponent, mapStateToProps, mapDispatchToProps }
 export default connect(mapStateToProps, mapDispatchToProps)(AwesomeComponent)
