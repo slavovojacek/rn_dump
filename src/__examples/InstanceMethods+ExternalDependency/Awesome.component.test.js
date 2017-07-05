@@ -20,6 +20,8 @@ describe('AwesomeComponent', () => {
 
   beforeEach(() => {
     props = {...AwesomeComponent.defaultProps, logIntoConsole: jest.fn()}
+
+    jest.clearAllMocks();
   })
 
   describe('instance', () => {

@@ -2,6 +2,9 @@ import React from 'react'
 
 import { LoginContainer } from './Login.container'
 
+jest
+  .mock('./Login.container.ui', () => null)
+
 describe('LoginContainer', () => {
   let props
   const getInstance = p => new LoginContainer(p)

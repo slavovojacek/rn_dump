@@ -1,18 +1,18 @@
 import React from 'react'
 
-import { LoginContainer } from './Login.container'
+import LoginContainerUI from './Login.container.ui'
 
 import { assertSnapshots } from '../../TestUtils/snapshots'
 import { formOnlyStore } from '../../state'
 
-describe('LoginContainer Snapshots', () => {
+describe('LoginContainerUI Snapshots', () => {
   const config = [
     {
-      props: LoginContainer.defaultProps,
+      props: LoginContainerUI.defaultProps,
       desc: 'renders correctly'
     }
   ]
 
   config
-    .forEach(conf => assertSnapshots(LoginContainer, conf.props, conf.desc, formOnlyStore))
+    .forEach(conf => assertSnapshots(LoginContainerUI, conf.props, conf.desc, formOnlyStore))
 })
