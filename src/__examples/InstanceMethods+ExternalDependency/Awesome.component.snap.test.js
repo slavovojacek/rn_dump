@@ -1,13 +1,16 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
 
 import AwesomeComponent from './Awesome.component'
 
+import { assertSnapshots } from '../../TestUtils/snapshots'
+
 describe('AwesomeComponent Snapshots', () => {
-  it('renders correctly', () => {
-    const tree = renderer
-      .create(<AwesomeComponent {...AwesomeComponent.defaultProps} />)
-      .toJSON()
-    expect(tree).toMatchSnapshot()
-  })
+  const config = [
+    {
+      props: AwesomeComponent.defaultProps,
+      desc: 'renders correctly'
+    }
+  ]
+
+  assertSnapshots(AwesomeComponent, config)
 })

@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ApolloContainer Snapshots matches query 1`] = `
+Object {
+  "definitions": Array [
+    Object {
+      "directives": Array [],
+      "kind": "OperationDefinition",
+      "name": undefined,
+      "operation": "query",
+      "selectionSet": Object {
+        "kind": "SelectionSet",
+        "selections": Array [
+          Object {
+            "alias": null,
+            "arguments": Array [
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "owners",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "repoOwner",
+                  },
+                },
+              },
+              Object {
+                "kind": "Argument",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "name",
+                },
+                "value": Object {
+                  "kind": "Variable",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "repoName",
+                  },
+                },
+              },
+            ],
+            "directives": Array [],
+            "kind": "Field",
+            "name": Object {
+              "kind": "Name",
+              "value": "repository",
+            },
+            "selectionSet": Object {
+              "kind": "SelectionSet",
+              "selections": Array [
+                Object {
+                  "alias": null,
+                  "arguments": Array [
+                    Object {
+                      "kind": "Argument",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "last",
+                      },
+                      "value": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "limit",
+                        },
+                      },
+                    },
+                  ],
+                  "directives": Array [],
+                  "kind": "Field",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "issues",
+                  },
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": null,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "nodes",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": null,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "title",
+                              },
+                              "selectionSet": null,
+                            },
+                            Object {
+                              "alias": null,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "url",
+                              },
+                              "selectionSet": null,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
+            },
+          },
+        ],
+      },
+      "variableDefinitions": Array [
+        Object {
+          "defaultValue": null,
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "String",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "repoOwner",
+            },
+          },
+        },
+        Object {
+          "defaultValue": null,
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NonNullType",
+            "type": Object {
+              "kind": "NamedType",
+              "name": Object {
+                "kind": "Name",
+                "value": "String",
+              },
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "repoName",
+            },
+          },
+        },
+        Object {
+          "defaultValue": null,
+          "kind": "VariableDefinition",
+          "type": Object {
+            "kind": "NamedType",
+            "name": Object {
+              "kind": "Name",
+              "value": "Int",
+            },
+          },
+          "variable": Object {
+            "kind": "Variable",
+            "name": Object {
+              "kind": "Name",
+              "value": "limit",
+            },
+          },
+        },
+      ],
+    },
+  ],
+  "kind": "Document",
+  "loc": Object {
+    "end": 217,
+    "start": 0,
+  },
+}
+`;
+
+exports[`ApolloContainer Snapshots renders correctly 1`] = `
+<View>
+  N/A
+</View>
+`;
+
+exports[`ApolloContainer Snapshots renders correctly when error present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Oops!
+  </Text>
+</View>
+`;
+
+exports[`ApolloContainer Snapshots renders correctly when loading 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    Loading...
+  </Text>
+</View>
+`;
+
+exports[`ApolloContainer Snapshots renders correctly when not loading and repository present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "blue",
+        "fontSize": 16,
+        "marginBottom": 5,
+        "marginTop": 5,
+        "textDecorationColor": "blue",
+        "textDecorationLine": "underline",
+        "textDecorationStyle": "solid",
+      }
+    }
+  >
+    Sumfin
+  </Text>
+</View>
+`;

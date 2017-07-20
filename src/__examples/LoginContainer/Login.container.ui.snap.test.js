@@ -13,6 +13,5 @@ describe('LoginContainerUI Snapshots', () => {
     }
   ]
 
-  config
-    .forEach(conf => assertSnapshots(LoginContainerUI, conf.props, conf.desc, formOnlyStore))
+  assertSnapshots(LoginContainerUI, config, formOnlyStore)
 })

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LoginForm Snapshots matches query 1`] = `undefined`;
+
 exports[`LoginForm Snapshots renders correctly 1`] = `
 <View>
   <View

@@ -1,14 +1,16 @@
 import { StackNavigator } from 'react-navigation'
 
 import LoginScreen from '../../__examples/LoginContainer/Login.container'
+import ApolloScreen from '../../__examples/ApolloContainer/Apollo.container'
 
 export const Navigation = StackNavigator({
-  Login: {screen: LoginScreen}
+  Login: {screen: LoginScreen},
+  Apollo: {screen: ApolloScreen},
 })
 
 const initialState = Navigation
   .router
-  .getStateForAction(Navigation.router.getActionForPathAndParams('Login'))
+  .getStateForAction(Navigation.router.getActionForPathAndParams('Apollo'))
 
 export default (state = initialState, action) => {
   const nextState = Navigation.router.getStateForAction(action, state)

@@ -2,7 +2,12 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
 
-const assertSnapshots = (Component, props, desc, store = null) => {
+const assertSnapshots = (Container, config, store = null) => {
+  config.forEach(conf => assertSnapshot(Container, conf.props, conf.desc, store))
+  if (Container.query !== null) assertQuery(Container)
+}
+
+const assertSnapshot = (Component, props, desc, store = null) => {
   let getComponent = p => null
 
   if (store !== null) {
@@ -20,6 +25,12 @@ const assertSnapshots = (Component, props, desc, store = null) => {
       .create(getComponent(props))
       .toJSON()
     expect(tree).toMatchSnapshot()
+  })
+}
+
+const assertQuery = (Component) => {
+  test('matches query', () => {
+    expect(Component.query).toMatchSnapshot()
   })
 }
 

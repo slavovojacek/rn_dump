@@ -1,8 +1,9 @@
 import React from 'react'
-import { Provider, connect } from 'react-redux'
+import { ApolloProvider } from 'react-apollo'
+import { connect } from 'react-redux'
 import { addNavigationHelpers } from 'react-navigation'
 
-import store from './state'
+import { store, client } from './state'
 import { Navigation } from './Redux/Navigation/reducer'
 
 class App extends React.Component {
@@ -21,9 +22,9 @@ const AppWithNavigationState = connect((state) => ({navigation: state.navigation
 class Root extends React.Component {
   render () {
     return (
-      <Provider store={store}>
+      <ApolloProvider store={store} client={client}>
         <AppWithNavigationState />
-      </Provider>
+      </ApolloProvider>
     )
   }
 }

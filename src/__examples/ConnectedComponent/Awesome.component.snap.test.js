@@ -35,5 +35,5 @@ describe('AwesomeComponent Snapshots', () => {
     }
   ]
 
-  config.forEach(conf => assertSnapshots(AwesomeComponent, conf.props, conf.desc))
+  assertSnapshots(AwesomeComponent, config)
 })

@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`LoginContainerUI Snapshots matches query 1`] = `undefined`;
+
 exports[`LoginContainerUI Snapshots renders correctly 1`] = `
 <View
   style={
