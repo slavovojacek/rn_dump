@@ -1,5 +1,5 @@
 import React from 'react'
-import { Some, None } from 'tsp-monads'
+import { Some, None } from '@threestup/monads'
 
 import { AwesomeComponent } from './Awesome.component'
 import { assertSnapshots } from '../../TestUtils/snapshots'

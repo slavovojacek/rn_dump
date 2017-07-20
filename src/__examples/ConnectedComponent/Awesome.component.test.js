@@ -1,5 +1,5 @@
 import React from 'react'
-import { Some } from 'tsp-monads'
+import { Some } from '@threestup/monads'
 
 import { AwesomeComponent, mapStateToProps, mapDispatchToProps } from './Awesome.component'
 import { initialState } from './lib/reducer'

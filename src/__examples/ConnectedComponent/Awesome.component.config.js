@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { None } from 'tsp-monads'
+import { None } from '@threestup/monads'
 
 const displayName = 'AwesomeComponent'
 

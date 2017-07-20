@@ -1,6 +1,7 @@
-import { combineReducers } from 'redux'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
+import { combineReducers } from 'redux'
 import { reducer as FormReducer } from 'redux-form'
+import { GH_API_TOKEN } from 'react-native-dotenv'
 
 import NavigationReducer from './Navigation/reducer'
 import LoginReducer from '../__examples/LoginContainer/lib/reducer'
@@ -9,7 +10,7 @@ let networkInterface = createNetworkInterface({uri: 'https://api.github.com/grap
 networkInterface.use([{
   applyMiddleware(req, next) {
     if (!req.options.headers) req.options.headers = {}
-    const token = `84639fc2fabcac43d339a83c18f1b04a248a9b30`
+    const token = GH_API_TOKEN
     req.options.headers.authorization = token ? `Bearer ${token}` : null
     next()
   }
