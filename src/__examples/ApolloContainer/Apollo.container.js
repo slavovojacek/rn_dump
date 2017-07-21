@@ -1,37 +1,21 @@
 import { Some } from '@threestup/monads'
 import React, { Component } from 'react'
 import { graphql } from 'react-apollo'
-import { View, Text, Linking } from 'react-native'
+import { Linking } from 'react-native'
 
 import Config from './Apollo.container.config'
-import styles from './Awesome.component.styles'
+import UI from './Apollo.container.ui'
 
 class ApolloContainer extends Component {
-  static Loading = <Text>Loading...</Text>
-  static Error = e => <Text style={styles.error}>{e}</Text>
-  static Issues = (r, onClick) => r.issues.nodes.map(i =>
-    <Text onPress={() => onClick(i.url)} style={styles.repo} key={i.id}>{i.title}</Text>
-  )
-
   _openIssue = url => {
     Linking.openURL(url).catch(err => console.error('An error occurred', err))
   }
 
   render () {
     console.log(this.props) // @TODO remove after faffing around
-    const {loading, error, repository} = this.props
+    const props = {...this.props, openIssue: this._openIssue}
 
-    return (
-      <View>
-        {loading ? ApolloContainer.Loading : error.match({
-          some: _ => ApolloContainer.Error(_),
-          none: repository.match({
-            some: repo => ApolloContainer.Issues(repo, this._openIssue),
-            none: 'N/A'
-          })
-        })}
-      </View>
-    )
+    return UI(props)
   }
 }
 

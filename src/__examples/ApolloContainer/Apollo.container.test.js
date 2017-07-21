@@ -3,6 +3,8 @@ import { Some } from '@threestup/monads'
 
 import { ApolloContainer, mapPropsToOptions, mapResultsToProps } from './Apollo.container'
 
+jest.mock('./Apollo.container.ui', () => null)
+
 const getInstance = p => new ApolloContainer(p)
 
 describe('ApolloContainer', () => {
