@@ -18,7 +18,7 @@ Object {
                 "kind": "Argument",
                 "name": Object {
                   "kind": "Name",
-                  "value": "owners",
+                  "value": "owner",
                 },
                 "value": Object {
                   "kind": "Variable",
@@ -201,7 +201,7 @@ Object {
   ],
   "kind": "Document",
   "loc": Object {
-    "end": 217,
+    "end": 216,
     "start": 0,
   },
 }

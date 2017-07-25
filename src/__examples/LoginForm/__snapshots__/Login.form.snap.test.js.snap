@@ -3,7 +3,9 @@
 exports[`LoginForm Snapshots matches query 1`] = `undefined`;
 
 exports[`LoginForm Snapshots renders correctly 1`] = `
-<View>
+<View
+  style={undefined}
+>
   <View
     style={
       Object {
@@ -133,7 +135,9 @@ exports[`LoginForm Snapshots renders correctly 1`] = `
 `;
 
 exports[`LoginForm Snapshots renders correctly when not pristine and not submitting 1`] = `
-<View>
+<View
+  style={undefined}
+>
   <View
     style={
       Object {
@@ -263,7 +267,9 @@ exports[`LoginForm Snapshots renders correctly when not pristine and not submitt
 `;
 
 exports[`LoginForm Snapshots renders correctly when pristine and not submitting 1`] = `
-<View>
+<View
+  style={undefined}
+>
   <View
     style={
       Object {
@@ -393,7 +399,9 @@ exports[`LoginForm Snapshots renders correctly when pristine and not submitting 
 `;
 
 exports[`LoginForm Snapshots renders correctly when submitting and not pristine 1`] = `
-<View>
+<View
+  style={undefined}
+>
   <View
     style={
       Object {

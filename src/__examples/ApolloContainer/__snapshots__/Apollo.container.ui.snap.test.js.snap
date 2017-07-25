@@ -4,7 +4,14 @@ exports[`ApolloContainerUI Snapshots matches query 1`] = `undefined`;
 
 exports[`ApolloContainerUI Snapshots renders correctly 1`] = `
 <View>
-  N/A
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    'N/A'
+  </Text>
 </View>
 `;
 

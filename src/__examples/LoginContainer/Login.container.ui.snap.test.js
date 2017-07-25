@@ -3,7 +3,9 @@ import React from 'react'
 import LoginContainerUI from './Login.container.ui'
 
 import { assertSnapshots } from '../../TestUtils/snapshots'
-import { formOnlyStore } from '../../state'
+
+jest
+  .mock('../LoginForm/Login.form', () => 'View')
 
 describe('LoginContainerUI Snapshots', () => {
   const config = [
@@ -13,5 +15,5 @@ describe('LoginContainerUI Snapshots', () => {
     }
   ]
 
-  assertSnapshots(LoginContainerUI, config, formOnlyStore)
+  assertSnapshots(LoginContainerUI, config)
 })
