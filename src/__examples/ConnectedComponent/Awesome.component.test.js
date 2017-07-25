@@ -8,17 +8,20 @@ import { apiFetch } from './lib/saga'
 const getInstance = p => new AwesomeComponent(p)
 
 describe('AwesomeComponent', () => {
-  let props
 
   beforeEach(() => {
-    props = {...AwesomeComponent.defaultProps, apiFetch: jest.fn()}
+    this.props = {...AwesomeComponent.defaultProps, apiFetch: jest.fn()}
+  })
+
+  afterEach(() => {
+    this.props = null
   })
 
   describe('Instance', () => {
     test('apiFetch gets called on componentDidMount', () => {
-      let instance = getInstance(props)
+      let instance = getInstance(this.props)
       instance.componentDidMount()
-      expect(props.apiFetch).toHaveBeenCalledWith('John Doe')
+      expect(this.props.apiFetch).toHaveBeenCalledWith('John Doe')
     })
   })
 

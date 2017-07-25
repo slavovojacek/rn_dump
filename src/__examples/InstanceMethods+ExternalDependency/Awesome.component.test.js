@@ -16,23 +16,26 @@ jest
   }))
 
 describe('AwesomeComponent', () => {
-  let props
 
   beforeEach(() => {
-    props = {...AwesomeComponent.defaultProps, logIntoConsole: jest.fn()}
+    this.props = {...AwesomeComponent.defaultProps, logIntoConsole: jest.fn()}
 
     jest.clearAllMocks();
   })
 
+  afterEach(() => {
+    this.props = null
+  })
+
   describe('instance', () => {
     test('logIntoConsole gets called upon mount', () => {
-      let subject = getInstance(props)
+      let subject = getInstance(this.props)
       subject.componentDidMount()
-      expect(props.logIntoConsole).toHaveBeenCalled()
+      expect(this.props.logIntoConsole).toHaveBeenCalled()
     })
 
     test('someHandler calls SomethingExternal.awesomeMethod and SomethingElseExternal.awesomeMethod with correct argument', () => {
-      let subject = getInstance(props)
+      let subject = getInstance(this.props)
       subject.someHandler('val')
       expect(SomethingExternal.awesomeMethod).toHaveBeenCalledWith('val')
       expect(SomethingElseExternal.anotherAwesomeMethod).toHaveBeenCalledWith('val')

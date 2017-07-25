@@ -7,29 +7,32 @@ import AwesomeComponent from './Awesome.component.mock'
 const getInstance = p => new AwesomeComponent(p)
 
 describe('AwesomeComponent', () => {
-  let props
 
   beforeEach(() => {
-    props = {...AwesomeComponent.defaultProps}
+    this.props = {...AwesomeComponent.defaultProps}
+  })
+
+  afterEach(() => {
+    this.props = null
   })
 
   // NOTE: It is questionable whether one needs to test the internals as shown below
   describe('Instance', () => {
     test('correctly sets up initial state', () => {
-      let instance = getInstance(props)
+      let instance = getInstance(this.props)
       expect(instance.state)
-        .toEqual({color: props.color, isWarningVisible: props.isWarningVisible})
+        .toEqual({color: this.props.color, isWarningVisible: this.props.isWarningVisible})
     })
 
     test('changeColor correctly updates color (internal state)', () => {
-      let instance = getInstance(props)
+      let instance = getInstance(this.props)
       instance.changeColor('purple')
       expect(instance.state.color).toEqual('purple')
     })
 
     test('toggleIsWarningVisible correctly toggles isWarningVisible (internal state)', () => {
-      let instance = getInstance(props)
-      const isWarningVisible_0 = props.isWarningVisible
+      let instance = getInstance(this.props)
+      const isWarningVisible_0 = this.props.isWarningVisible
       instance.toggleIsWarningVisible()
       const isWarningVisible_1 = instance.state.isWarningVisible
       expect(isWarningVisible_1).toEqual(!isWarningVisible_0)
@@ -41,7 +44,7 @@ describe('AwesomeComponent', () => {
 
   describe('DOM Interaction', () => {
     test('changeColor is called with correct arguments when first Text is pressed', () => {
-      let instance = getInstance(props)
+      let instance = getInstance(this.props)
       const changeColor = jest
         .spyOn(instance, 'changeColor')
         .mockImplementation(jest.fn())
@@ -53,7 +56,7 @@ describe('AwesomeComponent', () => {
     })
 
     test('toggleIsWarningVisible is called when second Text is pressed', () => {
-      let instance = getInstance(props)
+      let instance = getInstance(this.props)
       const toggleIsWarningVisible = jest
         .spyOn(instance, 'toggleIsWarningVisible')
         .mockImplementation(jest.fn())

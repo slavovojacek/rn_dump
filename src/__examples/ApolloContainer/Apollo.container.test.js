@@ -8,10 +8,13 @@ jest.mock('./Apollo.container.ui', () => null)
 const getInstance = p => new ApolloContainer(p)
 
 describe('ApolloContainer', () => {
-  let props
 
   beforeEach(() => {
-    props = {...ApolloContainer.defaultProps}
+    this.props = {...ApolloContainer.defaultProps}
+  })
+
+  afterEach(() => {
+    this.props = null
   })
 
   // describe('Instance', () => {
