@@ -1,9 +1,9 @@
 import { None } from '@threestup/monads'
 import PropTypes from 'prop-types'
 
-const displayName = 'ApolloContainer'
-
 import query from './lib/issues.graphql'
+
+const displayName = 'ApolloContainer'
 
 const propTypes = {
   loading: PropTypes.bool.isRequired,
