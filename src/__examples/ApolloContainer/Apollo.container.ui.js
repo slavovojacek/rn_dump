@@ -13,7 +13,7 @@ const Issues = (r, onClick) => r.issues.nodes.map(i =>
 const UI = ({loading, error, repository, openIssue}) => (
   <View>
     {loading ? Loading : error.match({
-      some: _ => Error(_),
+      some: Error,
       none: repository.match({
         some: repo => Issues(repo, openIssue),
         none: <Text>'N/A'</Text>

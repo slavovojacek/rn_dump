@@ -7,13 +7,13 @@ import Config from './Apollo.container.config'
 import UI from './Apollo.container.ui'
 
 class ApolloContainer extends Component {
-  _openIssue = url => {
+  openIssue = url => {
     Linking.openURL(url).catch(err => console.error('An error occurred', err))
   }
 
   render () {
     console.log(this.props) // @TODO remove after faffing around
-    const props = {...this.props, openIssue: this._openIssue}
+    const props = {...this.props, openIssue: this.openIssue}
 
     return UI(props)
   }

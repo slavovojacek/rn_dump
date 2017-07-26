@@ -31,8 +31,6 @@ LoginForm.defaultProps = Config.defaultProps
 
 export { LoginForm }
 
-LoginForm = reduxForm({
+export default reduxForm({
   form: 'Login', // destroyOnUnmount: true
 })(LoginForm)
-
-export default LoginForm

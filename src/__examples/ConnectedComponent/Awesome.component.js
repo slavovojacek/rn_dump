@@ -22,7 +22,7 @@ class AwesomeComponent extends Component {
       <View>
         {showLoading
           ? AwesomeComponent.Loading : error.match({
-            some: AwesomeComponent.Error,
+            some: AwesomeComponent.Error, // @TODO is this actually working?
             none: AwesomeComponent.Username(username)
           })}
       </View>
@@ -45,5 +45,5 @@ const mapDispatchToProps = {
   apiFetch
 }
 
-export { AwesomeComponent, mapStateToProps, mapDispatchToProps }
+export { AwesomeComponent, mapStateToProps }
 export default connect(mapStateToProps, mapDispatchToProps)(AwesomeComponent)
