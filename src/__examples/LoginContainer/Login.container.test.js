@@ -5,7 +5,7 @@ import { LoginContainer } from './Login.container'
 const getInstance = p => new LoginContainer(p)
 
 jest
-  .mock('./Login.container.ui', () => null)
+  .mock('./Login.container.view', () => null)
 
 describe('LoginContainer', () => {
 

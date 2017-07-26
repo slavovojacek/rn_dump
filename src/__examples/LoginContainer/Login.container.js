@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Some } from '@threestup/monads'
 
 import Config from './Login.container.config'
-import LoginContainerUI from './Login.container.ui'
+import LoginContainerUI from './Login.container.view'
 
 import { apiFetch } from './lib/saga'
 

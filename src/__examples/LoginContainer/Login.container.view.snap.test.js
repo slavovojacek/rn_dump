@@ -1,19 +1,19 @@
 import React from 'react'
 
-import LoginContainerUI from './Login.container.ui'
+import LoginContainerView from './Login.container.view'
 
 import { assertSnapshots } from '../../TestUtils/snapshots'
 
 jest
   .mock('../LoginForm/Login.form', () => 'View')
 
-describe('LoginContainerUI Snapshots', () => {
+describe('LoginContainer View Snapshots', () => {
   const config = [
     {
-      props: LoginContainerUI.defaultProps,
+      props: LoginContainerView.defaultProps,
       desc: 'renders correctly'
     }
   ]
 
-  assertSnapshots(LoginContainerUI, config)
+  assertSnapshots(LoginContainerView, config)
 })

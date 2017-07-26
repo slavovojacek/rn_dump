@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApolloContainerUI Snapshots matches query 1`] = `undefined`;
+exports[`ApolloContainer View Snapshots matches query 1`] = `undefined`;
 
-exports[`ApolloContainerUI Snapshots renders correctly 1`] = `
+exports[`ApolloContainer View Snapshots renders correctly 1`] = `
 <View>
   <Text
     accessible={true}
@@ -15,7 +15,7 @@ exports[`ApolloContainerUI Snapshots renders correctly 1`] = `
 </View>
 `;
 
-exports[`ApolloContainerUI Snapshots renders correctly when error present 1`] = `
+exports[`ApolloContainer View Snapshots renders correctly when error present 1`] = `
 <View>
   <Text
     accessible={true}
@@ -33,7 +33,7 @@ exports[`ApolloContainerUI Snapshots renders correctly when error present 1`] = 
 </View>
 `;
 
-exports[`ApolloContainerUI Snapshots renders correctly when loading 1`] = `
+exports[`ApolloContainer View Snapshots renders correctly when loading 1`] = `
 <View>
   <Text
     accessible={true}
@@ -46,7 +46,7 @@ exports[`ApolloContainerUI Snapshots renders correctly when loading 1`] = `
 </View>
 `;
 
-exports[`ApolloContainerUI Snapshots renders correctly when not loading and repository present 1`] = `
+exports[`ApolloContainer View Snapshots renders correctly when not loading and repository present 1`] = `
 <View>
   <Text
     accessible={true}

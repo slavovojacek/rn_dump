@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import Config from './Login.container.ui.config'
+import Config from './Login.container.view.config'
 import styles from './Login.container.styles'
 
 import LoginForm from '../LoginForm/Login.form'

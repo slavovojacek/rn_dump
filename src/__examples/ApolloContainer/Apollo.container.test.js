@@ -7,7 +7,7 @@ jest
   .mock('Linking', () => ({
     openURL: () => ({ then: jest.fn(), catch: jest.fn() })
   }))
-  .mock('./Apollo.container.ui', () => null)
+  .mock('./Apollo.container.view', () => null)
 
 const getInstance = p => new ApolloContainer(p)
 

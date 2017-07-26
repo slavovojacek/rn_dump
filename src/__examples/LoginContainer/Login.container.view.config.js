@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types'
 
-import Config from './Apollo.container.config'
+import Config from './Login.container.config'
 
-const displayName = 'ApolloContainerUI'
+const displayName = 'LoginContainerView'
 
 const propTypes = {
   ...Config.propTypes,
-  openIssue: PropTypes.func.isRequired
+  signIn: PropTypes.func.isRequired
 }
 
 const defaultProps = {
   ...Config.defaultProps,
-  openIssue: () => null
+  signIn: values => null
 }
 
 export default {

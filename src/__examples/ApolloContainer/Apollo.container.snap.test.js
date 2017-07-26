@@ -4,7 +4,7 @@ import { ApolloContainer } from './Apollo.container'
 
 import { assertSnapshots } from '../../TestUtils/snapshots'
 
-jest.mock('./Apollo.container.ui', () => null)
+jest.mock('./Apollo.container.view', () => null)
 
 describe('ApolloContainer Snapshots', () => {
   const config = []

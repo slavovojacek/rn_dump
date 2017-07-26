@@ -2,26 +2,26 @@ import React from 'react'
 import { Some } from '@threestup/monads'
 
 import { ApolloContainer } from './Apollo.container'
-import ApolloContainerUI from './Apollo.container.ui'
+import ApolloContainerView from './Apollo.container.view'
 
 import { assertSnapshots } from '../../TestUtils/snapshots'
 
-describe('ApolloContainerUI Snapshots', () => {
+describe('ApolloContainer View Snapshots', () => {
   const config = [
     {
-      props: ApolloContainer.defaultProps,
+      props: ApolloContainerView.defaultProps,
       desc: 'renders correctly'
     },
     {
       props: {
-        ...ApolloContainer.defaultProps,
+        ...ApolloContainerView.defaultProps,
         loading: true
       },
       desc: 'renders correctly when loading'
     },
     {
       props: {
-        ...ApolloContainer.defaultProps,
+        ...ApolloContainerView.defaultProps,
         repository: Some({issues: {nodes: [{id: 'abc-123', title: 'Sumfin'}]}}),
         loading: false
       },
@@ -29,12 +29,12 @@ describe('ApolloContainerUI Snapshots', () => {
     },
     {
       props: {
-        ...ApolloContainer.defaultProps,
+        ...ApolloContainerView.defaultProps,
         error: Some('Oops!')
       },
       desc: 'renders correctly when error present'
     }
   ]
 
-  assertSnapshots(ApolloContainerUI, config)
+  assertSnapshots(ApolloContainerView, config)
 })

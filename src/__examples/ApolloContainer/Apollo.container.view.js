@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import Config from './Apollo.container.ui.config'
+import Config from './Apollo.container.view.config'
 import styles from './Apollo.container.styles'
 
 const Loading = <Text>Loading...</Text>

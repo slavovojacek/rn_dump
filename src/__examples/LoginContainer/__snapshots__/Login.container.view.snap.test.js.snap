@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginContainerUI Snapshots matches query 1`] = `undefined`;
+exports[`LoginContainer View Snapshots matches query 1`] = `undefined`;
 
-exports[`LoginContainerUI Snapshots renders correctly 1`] = `
+exports[`LoginContainer View Snapshots renders correctly 1`] = `
 <View
   style={
     Object {
