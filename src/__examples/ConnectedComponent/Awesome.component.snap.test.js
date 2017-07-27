@@ -2,7 +2,7 @@ import React from 'react'
 import { Some, None } from '@threestup/monads'
 
 import { AwesomeComponent } from './Awesome.component'
-import { assertSnapshots } from '../../TestUtils/snapshots'
+import { assertSnapshots } from '../../TestUtils/snapshot'
 
 describe('AwesomeComponent Snapshots', () => {
   const config = [

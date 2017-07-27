@@ -2,7 +2,7 @@ import React from 'react'
 
 import LoginForm from './Login.form'
 
-import { assertSnapshots } from '../../TestUtils/snapshots'
+import { assertSnapshots } from '../../TestUtils/snapshot'
 import { formOnlyStore } from '../../state'
 
 describe('LoginForm Snapshots', () => {

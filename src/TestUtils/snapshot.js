@@ -2,17 +2,16 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
 
-const assertSnapshots = (Container, configs, store = null) => {
-  configs.forEach(config => assertSnapshot(Container, config.props, config.desc, store))
-  if (Container.query !== null) assertQuery(Container)
-}
+import { assertGql } from './gql'
+
+import { isNull } from '../Utils/type'
 
 const assertSnapshot = (Component, props, desc, store = null) => {
   let getComponent = p => null
 
   // In theory, if things are done correctly, this (wrapping
   // a component in Provider with a store) should never be needed.
-  if (store !== null) {
+  if (!isNull(store)) {
     getComponent = p => (
       <Provider store={store}>
         <Component {...p}/>
@@ -30,10 +29,9 @@ const assertSnapshot = (Component, props, desc, store = null) => {
   })
 }
 
-const assertQuery = (Component) => {
-  test('matches query', () => {
-    expect(Component.query).toMatchSnapshot()
-  })
+const assertSnapshots = (Component, configs, store = null) => {
+  configs.forEach(config => assertSnapshot(Component, config.props, config.desc, store))
+  if (!isNull(Component.gql)) assertGql(Component)
 }
 
 export { assertSnapshots }

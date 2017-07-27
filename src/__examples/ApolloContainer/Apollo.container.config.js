@@ -1,7 +1,7 @@
 import { None } from '@threestup/monads'
 import PropTypes from 'prop-types'
 
-import query from './lib/issues.graphql'
+import gql from './Apollo.container.graphql'
 
 const displayName = 'ApolloContainer'
 
@@ -18,5 +18,5 @@ const defaultProps = {
 }
 
 export default {
-  displayName, propTypes, defaultProps, query
+  displayName, propTypes, defaultProps, gql
 }

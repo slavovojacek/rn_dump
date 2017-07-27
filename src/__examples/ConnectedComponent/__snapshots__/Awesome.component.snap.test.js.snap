@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AwesomeComponent Snapshots matches query 1`] = `undefined`;
-
 exports[`AwesomeComponent Snapshots renders correctly 1`] = `
 <View>
   <Text

@@ -4,7 +4,7 @@ import { Some } from '@threestup/monads'
 import { ApolloContainer } from './Apollo.container'
 import ApolloContainerView from './Apollo.container.view'
 
-import { assertSnapshots } from '../../TestUtils/snapshots'
+import { assertSnapshots } from '../../TestUtils/snapshot'
 
 describe('ApolloContainer View Snapshots', () => {
   const config = [

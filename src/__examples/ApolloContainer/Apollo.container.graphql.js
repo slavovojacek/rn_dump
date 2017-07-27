@@ -1,6 +1,6 @@
-import gql from 'graphql-tag'
+import toGQL from 'graphql-tag'
 
-const Issues = gql`
+const Issues = toGQL`
   query($repoOwner: String!, $repoName: String!, $limit: Int) {
     repository(owner: $repoOwner, name: $repoName) {
       issues(last: $limit) {
@@ -12,5 +12,14 @@ const Issues = gql`
   }
 `
 
-export { Issues }
-export default Issues
+const SomeMutation = toGQL`
+    mutation($arg: String!) {
+        something(arg: $arg) {
+            id
+        }
+    }
+`
+
+export default {
+  Issues, SomeMutation
+}

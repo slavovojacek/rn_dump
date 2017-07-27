@@ -14,12 +14,13 @@ class ApolloContainer extends Component {
   }
 
   render () {
+    console.log(this.props)
     const props = {...this.props, openIssue: this.openIssue}
     return View(props)
   }
 }
 
-ApolloContainer.query = Config.query
+ApolloContainer.gql = Config.gql
 ApolloContainer.displayName = Config.displayName
 ApolloContainer.propTypes = Config.propTypes
 ApolloContainer.defaultProps = Config.defaultProps
@@ -34,7 +35,7 @@ const mapResultsToProps = ({data: {loading, error, repository}}) => ({
 })
 
 export { ApolloContainer, mapPropsToOptions, mapResultsToProps }
-export default graphql(Config.query, {
+export default graphql(Config.gql.Issues, {
   props: mapResultsToProps,
   options: mapPropsToOptions,
 })(ApolloContainer)

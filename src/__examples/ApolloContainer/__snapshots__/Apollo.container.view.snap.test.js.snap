@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ApolloContainer View Snapshots matches query 1`] = `undefined`;
-
 exports[`ApolloContainer View Snapshots renders correctly 1`] = `
 <View>
   <Text
