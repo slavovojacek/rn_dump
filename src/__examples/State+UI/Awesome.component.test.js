@@ -2,9 +2,12 @@ import React from 'react'
 import { Text } from 'react-native'
 import { shallow } from 'enzyme'
 
-import AwesomeComponent from './Awesome.component.mock'
+import AwesomeComponent from './Awesome.component'
 
-const getInstance = p => new AwesomeComponent(p)
+import { mockSetState } from '../../TestUtils/mocking'
+
+const ComponentWithMockSetState = mockSetState(AwesomeComponent)
+const getInstance = p => new ComponentWithMockSetState(p)
 
 describe('AwesomeComponent', () => {
 
