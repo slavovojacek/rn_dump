@@ -19,7 +19,6 @@ describe('AwesomeComponent', () => {
     this.props = null
   })
 
-  // NOTE: It is questionable whether one needs to test the internals as shown below
   describe('Instance', () => {
     test('correctly sets up initial state', () => {
       let instance = getInstance(this.props)
