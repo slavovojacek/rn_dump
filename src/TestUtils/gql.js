@@ -1,5 +1,3 @@
-import React from 'react'
-
 const assertQueryOrMutation = (QoM) => {
   test('matches Query or Mutation', () => {
     expect(QoM).toMatchSnapshot()

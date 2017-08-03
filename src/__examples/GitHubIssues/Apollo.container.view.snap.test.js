@@ -1,7 +1,8 @@
 import React from 'react'
 import { Some } from '@threestup/monads'
 
-import ApolloContainerView from './Apollo.container.view'
+import { ApolloContainer } from './GitHubIssues.container'
+import ApolloContainerView from './GitHubIssues.container.view'
 
 import { assertSnapshots } from '../../TestUtils/snapshot'
 

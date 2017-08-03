@@ -1,7 +1,7 @@
-import toGQL from 'graphql-tag'
+import gqlToAST from 'graphql-tag'
 
-const Issues = toGQL`
-  query($repoOwner: String!, $repoName: String!, $limit: Int) {
+const Issues = gqlToAST`
+  query Issues ($repoOwner: String!, $repoName: String!, $limit: Int) {
     repository(owner: $repoOwner, name: $repoName) {
       issues(last: $limit) {
         nodes {
@@ -12,14 +12,6 @@ const Issues = toGQL`
   }
 `
 
-const SomeMutation = toGQL`
-    mutation($arg: String!) {
-        something(arg: $arg) {
-            id
-        }
-    }
-`
-
 export default {
-  Issues, SomeMutation
+  Issues
 }
