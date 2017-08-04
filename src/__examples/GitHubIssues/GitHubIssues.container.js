@@ -3,14 +3,13 @@ import React from 'react'
 import { compose, graphql } from 'react-apollo'
 
 import Config from './GitHubIssues.container.config'
-import GitHubIssuesView from './GitHubIssues.container.view'
+import GitHubIssues from './GitHubIssues.component'
 
-const GitHubIssuesContainer = props => <GitHubIssuesView {...props} />
+const GitHubIssuesContainer = props => <GitHubIssues {...props} />
 
 GitHubIssuesContainer.gql = Config.gql
 GitHubIssuesContainer.propTypes = Config.propTypes
 GitHubIssuesContainer.defaultProps = Config.defaultProps
-// GitHubIssuesContainer.displayName = Config.displayName
 
 const mapPropsToOptions = (p) => {
   // `defaultProps` are not applied at this point, therefore we have to do the following

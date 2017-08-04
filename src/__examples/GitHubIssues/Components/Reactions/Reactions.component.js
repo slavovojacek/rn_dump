@@ -1,11 +1,8 @@
 import { Some, None } from '@threestup/monads'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
-// import styles from './Reaction.component.styles'
-import Reaction from './Reaction.component'
-
-import { noop } from '../../../Utils/misc'
+import Reaction from '../Reaction/Reaction.component'
 
 const ReactionType = {
   DEFAULT: '_',
@@ -13,12 +10,16 @@ const ReactionType = {
   THUMBS_DOWN: 'THUMBS_DOWN'
 }
 
+const AllowedReactionTypes = Object
+  .keys(ReactionType)
+  .filter(type => type !== ReactionType.DEFAULT)
+
 class Reactions extends React.Component {
   static userDef = {id: ''}
   static reactionDef = {id: '', content: '', user: Reactions.userDef}
 
   static hasMyReaction = (type = ReactionType.DEFAULT, reactions = [], me = None) => {
-    const reaction = Some(reactions.find(({content = null}) => content === type))
+    const reaction = Some(reactions.find(reaction => reaction.content === type))
     const {user} = reaction.unwrap_or(Reactions.reactionDef)
 
     return me.match({
@@ -36,8 +37,7 @@ class Reactions extends React.Component {
 
     return (
       <View style={{flexDirection: 'row'}}>
-        {Object
-          .keys(ReactionType)
+        {AllowedReactionTypes
           .map((type) => (
             <Reaction
               key={`${type}_${uniqueStr}`}
@@ -51,6 +51,6 @@ class Reactions extends React.Component {
 }
 
 export {
-  Reactions, ReactionType
+  Reactions, ReactionType, AllowedReactionTypes
 }
 

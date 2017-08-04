@@ -10,14 +10,5 @@ export default StyleSheet.create({
     textDecorationColor: 'blue',
     marginTop: 5,
     marginBottom: 5
-  },
-  addReaction: {
-    color: 'green',
-    fontSize: 14,
-    fontWeight: 'bold',
-    textDecorationLine: 'underline',
-    textDecorationStyle: 'solid',
-    textDecorationColor: 'green',
-    marginBottom: 15
-  },
+  }
 })

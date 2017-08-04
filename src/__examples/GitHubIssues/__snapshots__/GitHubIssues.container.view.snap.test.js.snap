@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GitHubIssues View Snapshots renders correctly 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    Cannot get Issues for some reason
+  </Text>
+</View>
+`;
+
+exports[`GitHubIssues View Snapshots renders correctly when \`error\` present 1`] = `<View />`;
+
+exports[`GitHubIssues View Snapshots renders correctly when \`error\` present, regardless of what else is present 1`] = `<View />`;
+
+exports[`GitHubIssues View Snapshots renders correctly when \`issuesLoading\` true 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    Issues are currently loading...
+  </Text>
+</View>
+`;
+
+exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and \`issues\` present 1`] = `
+<View>
+  <Issues
+    addReactionToIssue={[Function]}
+    issues={
+      Array [
+        undefined,
+      ]
+    }
+    loading={false}
+    me={_None {}}
+    removeReactionFromIssue={[Function]}
+  />
+</View>
+`;
+
+exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and \`me\` present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+  >
+    Cannot get Issues for some reason
+  </Text>
+</View>
+`;

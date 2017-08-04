@@ -3,7 +3,7 @@ import { GitHubIssuesContainer } from './GitHubIssues.container'
 import { assertGql } from '../../TestUtils/gql'
 
 jest
-  .mock('./GitHubIssues.container.view', () => 'GitHubIssuesView')
+  .mock('./GitHubIssues.component', () => 'GitHubIssuesComponent')
 
 describe('ApolloContainer GraphQL Config', () => {
   assertGql(GitHubIssuesContainer)

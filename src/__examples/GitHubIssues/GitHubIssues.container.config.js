@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import gql from './GitHubIssues.container.graphql'
+import gql from './GitHubIssues.graphql'
 
 const displayName = 'ApolloContainer'
 

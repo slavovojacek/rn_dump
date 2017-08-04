@@ -2,9 +2,9 @@ import React from 'react'
 import { Text } from 'react-native'
 
 import Style from './Reaction.component.styles'
-import { ReactionType } from './Reactions.component'
+import { ReactionType, AllowedReactionTypes } from '../Reactions/Reactions.component'
 
-import { noop } from '../../../Utils/misc'
+import { noop } from '../../../../Utils/misc'
 
 const Reaction = (props) => {
   const {
@@ -16,6 +16,8 @@ const Reaction = (props) => {
   } = props
 
   this.displayName = type
+
+  console.log(type)
 
   const style = pressed ? Style.reactionActive : Style.reactionInactive
   const onPress = pressed
@@ -32,6 +34,7 @@ const Reaction = (props) => {
       config.text = '👎'
       break
     default:
+      throw new Error(`Type of Reaction has to be one of ${AllowedReactionTypes}`)
       break
   }
 
