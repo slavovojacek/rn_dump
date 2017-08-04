@@ -1,16 +1,16 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import { Reactions } from '../Reactions/Reactions.component'
-// @TODO move to its own file here
+import Config from './Issues.component.config'
 import styles from './Issues.component.styles'
 
-import { noop } from '../../../../Utils/misc'
+import { Reactions } from '../Reactions/Reactions.component'
+import { openUrl } from '../../../../../Utils/misc'
 
-const Issues = ({issues = [], openIssue = noop, ...rest}) => {
+const Issues = ({issues = [], ...rest}) => {
   const Children = issues
     .map(issue => {
-      const onPress = () => openIssue(issue.url)
+      const onPress = () => openUrl(issue.url)
       const reactions = issue.reactions.nodes
       const reactionsProps = {reactions, issue, ...rest}
 
@@ -25,5 +25,9 @@ const Issues = ({issues = [], openIssue = noop, ...rest}) => {
   // @TODO figure out whether View is necessary
   return <View style={{backgroundColor: 'red'}}>{Children}</View>
 }
+
+Issues.displayName = Config.displayName
+Issues.propTypes = Config.propTypes
+Issues.defaultProps = Config.defaultProps
 
 export default Issues

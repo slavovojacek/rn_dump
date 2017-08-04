@@ -1,19 +1,18 @@
 import React from 'react'
-import { View, Text, Linking } from 'react-native'
+import { View, Text } from 'react-native'
 
 import Config from './GitHubIssues.component.config'
 import styles from './GitHubIssues.component.styles'
 
-import Issues from './Components/Issues/Issues.component'
+import Issues from './lib/Components/Issues/Issues.component'
 
-const RenderIssuesLoading = <Text>Issues are currently loading...</Text>
-const RenderError = e => <Text style={styles.error}>{e}</Text>
+const IssuesLoading = () => <Text>Issues are currently loading...</Text>
+const Error = ({text = 'Error'}) => <Text style={styles.error}>{text}</Text>
 
 class GitHubIssues extends React.Component {
-  openIssue = url => {
-    Linking
-      .openURL(url)
-      .catch(err => console.error('An error occurred', err))
+  someMethodWhichShouldNotBeHere = () => {
+    // Whatever you want to do here can be done inside
+    // the child components, e.g. <IssuesLoading />, <Error />, etc.
   }
 
   render () {
@@ -21,8 +20,8 @@ class GitHubIssues extends React.Component {
 
     return (
       <View>
-        {issuesLoading ? RenderIssuesLoading : error.match({
-          some: e => RenderError,
+        {issuesLoading ? <IssuesLoading /> : error.match({
+          some: e => <Error text={e}/>,
           none: issues.match({
             some: _ => {
               const issuesProps = {issues: _, ...rest}

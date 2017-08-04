@@ -36,7 +36,7 @@ const mapAddReactionToIssueToProps = ({mutate}) => ({
     refetchQueries: [
       'Issues'
     ]
-  }).then(console.log).catch(console.error)
+  }).catch(console.error) // Just for demo purposes, debugging. Shouldn't be here.
 })
 
 const mapRemoveReactionFromIssueToProps = ({mutate}) => ({
@@ -47,7 +47,7 @@ const mapRemoveReactionFromIssueToProps = ({mutate}) => ({
     refetchQueries: [
       'Issues'
     ]
-  }).then(console.log).catch(console.error)
+  }).catch(console.error) // Just for demo purposes, debugging. Shouldn't be here.
 })
 
 export { GitHubIssues }

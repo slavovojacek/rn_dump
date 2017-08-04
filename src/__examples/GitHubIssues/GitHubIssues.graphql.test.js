@@ -1,10 +1,10 @@
-import { GitHubIssuesContainer } from './GitHubIssues.container'
+import { GitHubIssues } from './GitHubIssues.container'
 
 import { assertGql } from '../../TestUtils/gql'
 
 jest
   .mock('./GitHubIssues.component', () => 'GitHubIssuesComponent')
 
-describe('ApolloContainer GraphQL Config', () => {
-  assertGql(GitHubIssuesContainer)
+describe('GitHubIssues GraphQL Config', () => {
+  assertGql(GitHubIssues)
 })
