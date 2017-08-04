@@ -57,7 +57,7 @@ class Reactions extends React.Component {
 
 Reactions.displayName = Config.displayName
 Reactions.propTypes = Config.propTypes
-Reactions.defaultProps = Config.defaultProps
+// Reactions.defaultProps = Config.defaultProps
 
 export {
   Reactions, ReactionType, AllowedReactionTypes

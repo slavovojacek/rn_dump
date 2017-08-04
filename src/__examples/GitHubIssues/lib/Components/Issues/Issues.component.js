@@ -28,6 +28,6 @@ const Issues = ({issues = [], ...rest}) => {
 
 Issues.displayName = Config.displayName
 Issues.propTypes = Config.propTypes
-Issues.defaultProps = Config.defaultProps
+// Issues.defaultProps = Config.defaultProps
 
 export default Issues

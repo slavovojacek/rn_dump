@@ -1,22 +1,26 @@
 const userDef = (id = '') => ({id})
 
-const reactionDef = ({
-                       id = '',
-                       content = '',
-                       user = userDef()
-                     }) => ({
-  id, content, user
-})
+const reactionDef = (override = {}) => {
+  const def = {
+    id: '',
+    content: '',
+    user: userDef()
+  }
 
-const issueDef = ({
-                    id = '',
-                    title = '',
-                    url = '',
-                    bodyText = '',
-                    reactions = []
-                  }) => ({
-  id, title, url, bodyText, reactions
-})
+  return {...def, ...override}
+}
+
+const issueDef = (override = {}) => {
+  const def = {
+    id: '',
+    title: '',
+    url: '',
+    bodyText: '',
+    reactions: []
+  }
+
+  return {...def, ...override}
+}
 
 export {
   userDef, reactionDef, issueDef

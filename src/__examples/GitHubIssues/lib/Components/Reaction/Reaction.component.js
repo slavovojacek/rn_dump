@@ -48,6 +48,6 @@ const Reaction = (props) => {
 
 Reaction.displayName = Config.displayName
 Reaction.propTypes = Config.propTypes
-Reaction.defaultProps = Config.defaultProps
+// Reaction.defaultProps = Config.defaultProps
 
 export default Reaction
