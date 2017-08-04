@@ -5,7 +5,7 @@ import { View } from 'react-native'
 import Reaction from '../Reaction/Reaction.component'
 
 const ReactionType = {
-  DEFAULT: '_',
+  DEFAULT: 'DEFAULT',
   THUMBS_UP: 'THUMBS_UP',
   THUMBS_DOWN: 'THUMBS_DOWN'
 }

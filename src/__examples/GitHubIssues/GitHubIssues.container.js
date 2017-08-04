@@ -3,16 +3,16 @@ import React from 'react'
 import { compose, graphql } from 'react-apollo'
 
 import Config from './GitHubIssues.container.config'
-import GitHubIssues from './GitHubIssues.component'
+import GitHubIssuesComponent from './GitHubIssues.component'
 
-const GitHubIssuesContainer = props => <GitHubIssues {...props} />
+const GitHubIssues = props => <GitHubIssuesComponent {...props} />
 
-GitHubIssuesContainer.gql = Config.gql
-GitHubIssuesContainer.propTypes = Config.propTypes
-GitHubIssuesContainer.defaultProps = Config.defaultProps
+GitHubIssues.gql = Config.gql
+GitHubIssues.propTypes = Config.propTypes
+GitHubIssues.defaultProps = Config.defaultProps
 
 const mapPropsToOptions = (p) => {
-  // `defaultProps` are not applied at this point, therefore we have to do the following
+  // `defaultProps` are not applied at this point, therefore we have to merge explicitly
   const {repoOwner, repoName, limit} = {...Config.defaultProps, ...p}
 
   return {
@@ -20,15 +20,13 @@ const mapPropsToOptions = (p) => {
   }
 }
 
-const mapResultsToProps = ({data: {loading, error, repository, viewer}}) => {
-  return {
-    issuesLoading: loading,
-    error: Some(error),
-    me: Some(viewer),
-    issues: Some(repository)
-      .map(_ => _.issues.nodes)
-  }
-}
+const mapResultsToProps = ({data: {loading, error, repository, viewer}}) => ({
+  issuesLoading: loading,
+  error: Some(error),
+  me: Some(viewer),
+  issues: Some(repository)
+    .map(_ => _.issues.nodes)
+})
 
 const mapAddReactionToIssueToProps = ({mutate}) => ({
   addReactionToIssue: (subjectId, content) => mutate({
@@ -52,7 +50,7 @@ const mapRemoveReactionFromIssueToProps = ({mutate}) => ({
   }).then(console.log).catch(console.error)
 })
 
-export { GitHubIssuesContainer }
+export { GitHubIssues }
 
 export default compose(
   graphql(Config.gql.Issues, {
@@ -67,4 +65,4 @@ export default compose(
     props: mapRemoveReactionFromIssueToProps,
     options: mapPropsToOptions,
   })
-)(GitHubIssuesContainer)
+)(GitHubIssues)

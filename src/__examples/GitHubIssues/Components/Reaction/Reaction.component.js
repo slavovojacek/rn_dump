@@ -17,8 +17,6 @@ const Reaction = (props) => {
 
   this.displayName = type
 
-  console.log(type)
-
   const style = pressed ? Style.reactionActive : Style.reactionInactive
   const onPress = pressed
     ? () => removeReactionFromIssue(issue.id, type)

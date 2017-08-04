@@ -16,10 +16,6 @@ class GitHubIssues extends React.Component {
       .catch(err => console.error('An error occurred', err))
   }
 
-  sayHi = () => {
-    this.setState()
-  }
-
   render () {
     const {issuesLoading, error, issues, ...rest} = this.props
 
