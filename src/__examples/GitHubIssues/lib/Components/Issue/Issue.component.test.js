@@ -2,10 +2,13 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import Issue from './Issue.component'
-import Config from './Issue.component.config'
 
 import { openUrl } from '../../../../../Utils/misc'
 import { issueDef } from '../../../defs/index'
+
+const testDefaultProps = {
+  issue: issueDef(),
+}
 
 jest
   .mock('../Reactions/Reactions.component', () => 'Reactions')
@@ -16,7 +19,7 @@ jest
 describe('Issue Component', () => {
   beforeEach(() => {
     this.props = {
-      ...Config.testDefaultProps,
+      ...testDefaultProps,
       // Add override properties, usually mock functions
     }
   })

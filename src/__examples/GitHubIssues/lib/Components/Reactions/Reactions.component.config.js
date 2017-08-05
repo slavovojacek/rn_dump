@@ -1,4 +1,4 @@
-import { None } from '@threestup/monads'
+// import { None } from '@threestup/monads'
 import PropTypes from 'prop-types'
 
 const displayName = 'IssuesComponent'
@@ -9,11 +9,11 @@ const propTypes = {
 }
 
 // Only used for testing
-const testDefaultProps = {
-  me: None,
-  reactions: None,
-}
+// const testDefaultProps = {
+//   me: None,
+//   reactions: None,
+// }
 
 export default {
-  displayName, propTypes, testDefaultProps
+  displayName, propTypes
 }

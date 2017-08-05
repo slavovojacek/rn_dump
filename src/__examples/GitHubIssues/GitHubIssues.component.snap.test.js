@@ -1,11 +1,16 @@
+import { Some, None } from '@threestup/monads'
 import React from 'react'
-import { Some } from '@threestup/monads'
 
 import { issueDef } from './defs'
 import GitHubIssues from './GitHubIssues.component'
-import Config from './GitHubIssues.component.config'
 
 import { assertSnapshots } from '../../TestUtils/snapshot'
+
+const testDefaultProps = {
+  issuesLoading: false,
+  error: None,
+  issues: None,
+}
 
 jest
   .mock('./lib/Components/Issues/Issues.component', () => 'Issues')
@@ -17,12 +22,12 @@ describe('GitHubIssues Component Snapshots', () => {
 
   const configs = [
     {
-      props: Config.testDefaultProps,
+      props: testDefaultProps,
       desc: 'renders correctly'
     },
     {
       props: {
-        ...Config.testDefaultProps,
+        ...testDefaultProps,
         issuesLoading: true,
         issues: Some([issueDef()]),
         error: Some('Oops!')
@@ -31,7 +36,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...Config.testDefaultProps,
+        ...testDefaultProps,
         issuesLoading: false,
         issues: Some([issueDef()]),
       },
@@ -39,7 +44,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...Config.testDefaultProps,
+        ...testDefaultProps,
         issuesLoading: false,
         issues: Some([]),
       },
@@ -47,7 +52,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...Config.testDefaultProps,
+        ...testDefaultProps,
         issuesLoading: false,
         error: Some('Oops!'),
       },
@@ -55,7 +60,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...Config.testDefaultProps,
+        ...testDefaultProps,
         issuesLoading: false,
         error: Some('Oops!'),
         issues: Some([this.issueDef]),

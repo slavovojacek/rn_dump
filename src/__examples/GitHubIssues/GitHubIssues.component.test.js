@@ -1,10 +1,17 @@
+import { None } from '@threestup/monads'
+
 import GitHubIssues from './GitHubIssues.component'
-import Config from './GitHubIssues.component.config'
 
 import { mockSetState } from '../../TestUtils/mocking'
 
 const GitHubIssuesMockedState = mockSetState(GitHubIssues)
 const getInstance = props => new GitHubIssuesMockedState(props)
+
+const testDefaultProps = {
+  issuesLoading: false,
+  error: None,
+  issues: None,
+}
 
 jest
   .mock('./lib/Components/Issues/Issues.component', () => 'Issues')
@@ -12,7 +19,7 @@ jest
 describe('GitHubIssuesComponent', () => {
   beforeEach(() => {
     this.props = {
-      ...Config.testDefaultProps,
+      ...testDefaultProps,
       // Add override properties, usually mock functions
     }
   })

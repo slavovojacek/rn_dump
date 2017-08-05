@@ -1,8 +1,11 @@
 import Issues from './Issues.component'
-import Config from './Issues.component.config'
 
 import { issueDef } from '../../../defs'
 import { assertSnapshots } from '../../../../../TestUtils/snapshot'
+
+const testDefaultProps = {
+  issues: [],
+}
 
 jest
   .mock('../Issue/Issue.component', () => 'Issue')
@@ -14,12 +17,12 @@ describe('Issues Component Snapshots', () => {
 
   const configs = [
     {
-      props: Config.testDefaultProps,
+      props: testDefaultProps,
       desc: 'renders correctly'
     },
     {
       props: {
-        ...Config.testDefaultProps,
+        ...testDefaultProps,
         issues: [issueDef()],
       },
       desc: 'renders correctly when issues present'

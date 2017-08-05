@@ -6,11 +6,6 @@ const propTypes = {
   issues: PropTypes.array.isRequired,
 }
 
-// Only used for testing
-const testDefaultProps = {
-  issues: [],
-}
-
 export default {
-  displayName, propTypes, testDefaultProps
+  displayName, propTypes
 }

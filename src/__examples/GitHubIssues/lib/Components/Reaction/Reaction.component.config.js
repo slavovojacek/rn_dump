@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 
-import { ReactionType } from '../../Constants/ReactionType'
-import { issueDef } from '../../../defs'
-import { noop } from '../../../../../Utils/misc'
+// import { ReactionType } from '../../Constants/ReactionType'
+// import { issueDef } from '../../../defs'
+// import { noop } from '../../../../../Utils/misc'
 
 const displayName = 'ReactionComponent'
 
@@ -15,14 +15,14 @@ const propTypes = {
 }
 
 // Only used for testing
-const testDefaultProps = {
-  type: ReactionType.DEFAULT,
-  addReactionToIssue: noop,
-  removeReactionFromIssue: noop,
-  pressed: false,
-  issue: issueDef(),
-}
+// const testDefaultProps = {
+//   type: ReactionType.DEFAULT,
+//   addReactionToIssue: noop,
+//   removeReactionFromIssue: noop,
+//   pressed: false,
+//   issue: issueDef(),
+// }
 
 export default {
-  displayName, propTypes, testDefaultProps
+  displayName, propTypes
 }
