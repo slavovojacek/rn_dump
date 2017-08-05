@@ -1,4 +1,4 @@
-import { Some, None } from '@threestup/monads'
+import { Some, None, get_in } from '@threestup/monads'
 import React from 'react'
 import { View } from 'react-native'
 
@@ -6,34 +6,23 @@ import Config from './Reactions.component.config'
 import styles from './Reactions.component.styles'
 
 import Reaction from '../Reaction/Reaction.component'
-import { reactionDef } from '../../../defs'
-
-const ReactionType = {
-  DEFAULT: 'DEFAULT',
-  THUMBS_UP: 'THUMBS_UP',
-  THUMBS_DOWN: 'THUMBS_DOWN'
-}
-
-const AllowedReactionTypes = Object
-  .keys(ReactionType)
-  .filter(type => type !== ReactionType.DEFAULT)
+import { ReactionType, AllowedReactionTypes } from '../../Constants/ReactionType'
 
 class Reactions extends React.Component {
-  static hasMyReaction = (type = ReactionType.DEFAULT, reactions = [], me = None) => {
-    const reaction = Some(
-      reactions.find(reaction => reaction.content === type)
-    )
+  static hasMyReaction = (reactions = None, type = ReactionType.DEFAULT, me = None) => {
+    const myUserId = me.map(_ => _.id).unwrap_or('')
 
-    const {user} = reaction.unwrap_or(reactionDef())
-
-    return me.match({
-      some: _ => (user.id === _.id),
-      none: false
-    })
+    return reactions
+      .and_then(_ => Some(_.find(r => r.content === type)))
+      .and_then(_ => get_in(_, 'user.id'))
+      .match({
+        some: _ => (_ === myUserId),
+        none: false
+      })
   }
 
   render () {
-    const {reactions = [], me = None, ...rest} = this.props
+    const {reactions = None, me = None, ...rest} = this.props
 
     // To make React keys happy
     const uniqueStr = Math
@@ -46,7 +35,7 @@ class Reactions extends React.Component {
           .map((type) => (
             <Reaction
               key={`${type}_${uniqueStr}`}
-              pressed={Reactions.hasMyReaction(type, reactions, me)}
+              pressed={Reactions.hasMyReaction(reactions, type, me)}
               type={type}
               {...rest} />
           ))}
@@ -57,9 +46,7 @@ class Reactions extends React.Component {
 
 Reactions.displayName = Config.displayName
 Reactions.propTypes = Config.propTypes
-// Reactions.defaultProps = Config.defaultProps
 
-export {
-  Reactions, ReactionType, AllowedReactionTypes
-}
+export { ReactionType, AllowedReactionTypes }
+export default Reactions
 

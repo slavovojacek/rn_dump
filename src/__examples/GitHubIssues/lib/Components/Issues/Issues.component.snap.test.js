@@ -1,6 +1,4 @@
-import React from 'react'
-
-import IssuesComponent from './Issues.component'
+import Issues from './Issues.component'
 import Config from './Issues.component.config'
 
 import { issueDef } from '../../../defs'
@@ -28,5 +26,5 @@ describe('Issues Component Snapshots', () => {
     },
   ]
 
-  assertSnapshots(IssuesComponent, configs)
+  assertSnapshots(Issues, configs)
 })

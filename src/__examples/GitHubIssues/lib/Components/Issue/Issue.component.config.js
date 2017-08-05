@@ -6,13 +6,11 @@ import { noop } from '../../../../../Utils/misc'
 const displayName = 'IssueComponent'
 
 const propTypes = {
-  onPress: PropTypes.object.isRequired,
   issue: PropTypes.object.isRequired,
 }
 
 // Only used for testing
 const testDefaultProps = {
-  onPress: noop,
   issue: issueDef(),
 }
 

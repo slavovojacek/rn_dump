@@ -5,8 +5,8 @@ import Config from './Reaction.component.config'
 import style from './Reaction.component.styles'
 
 import { ReactionType, AllowedReactionTypes } from '../Reactions/Reactions.component'
-import { issueDef } from '../../../defs'
 import { noop } from '../../../../../Utils/misc'
+import { throwIfNotObject } from '../../../../../Utils/type'
 
 const Reaction = (props) => {
   const {
@@ -14,8 +14,10 @@ const Reaction = (props) => {
     addReactionToIssue = noop,
     removeReactionFromIssue = noop,
     pressed = false,
-    issue = issueDef()
+    issue
   } = props
+
+  throwIfNotObject(issue)
 
   let config = {
     text: '',
@@ -35,7 +37,9 @@ const Reaction = (props) => {
       config.text = '👎'
       break
     default:
-      throw new Error(`Type of Reaction has to be one of ${AllowedReactionTypes}`)
+      throw new Error(
+        `Type of Reaction has to be one of ${AllowedReactionTypes}`
+      )
       break
   }
 
@@ -48,6 +52,5 @@ const Reaction = (props) => {
 
 Reaction.displayName = Config.displayName
 Reaction.propTypes = Config.propTypes
-// Reaction.defaultProps = Config.defaultProps
 
 export default Reaction

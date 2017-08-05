@@ -5,7 +5,7 @@ import { View, Text } from 'react-native'
 import Config from './Issue.component.config'
 import styles from './Issues.component.styles'
 
-import { Reactions } from '../Reactions/Reactions.component'
+import Reactions from '../Reactions/Reactions.component'
 import { openUrl } from '../../../../../Utils/misc'
 import { throwIfNotObject } from '../../../../../Utils/type'
 

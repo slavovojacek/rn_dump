@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Issue Component Snapshots renders correctly 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "blue",
+        "fontSize": 16,
+        "marginBottom": 5,
+        "marginTop": 5,
+        "textDecorationColor": "blue",
+        "textDecorationLine": "underline",
+        "textDecorationStyle": "solid",
+      }
+    }
+  >
+    
+  </Text>
+  <Reactions
+    issue={
+      Object {
+        "bodyText": "",
+        "id": "",
+        "reactions": Array [],
+        "title": "",
+        "url": "",
+      }
+    }
+    reactions={_None {}}
+  />
+</View>
+`;
+
+exports[`Issue Component Snapshots renders correctly with specific title and url 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    onPress={[Function]}
+    style={
+      Object {
+        "color": "blue",
+        "fontSize": 16,
+        "marginBottom": 5,
+        "marginTop": 5,
+        "textDecorationColor": "blue",
+        "textDecorationLine": "underline",
+        "textDecorationStyle": "solid",
+      }
+    }
+  >
+    
+  </Text>
+  <Reactions
+    issue={
+      Object {
+        "bodyText": "",
+        "id": "",
+        "reactions": Array [],
+        "title": "",
+        "url": "",
+      }
+    }
+    issues={
+      Object {
+        "bodyText": "",
+        "id": "",
+        "reactions": Array [],
+        "title": "Some Title",
+        "url": "https://some.url",
+      }
+    }
+    reactions={_None {}}
+  />
+</View>
+`;

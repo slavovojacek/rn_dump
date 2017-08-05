@@ -5,14 +5,15 @@ const displayName = 'IssuesComponent'
 
 const propTypes = {
   me: PropTypes.object.isRequired,
-  reactions: PropTypes.array.isRequired,
+  reactions: PropTypes.object.isRequired,
 }
 
-const defaultProps = {
+// Only used for testing
+const testDefaultProps = {
   me: None,
-  reactions: [],
+  reactions: None,
 }
 
 export default {
-  displayName, propTypes, defaultProps
+  displayName, propTypes, testDefaultProps
 }
