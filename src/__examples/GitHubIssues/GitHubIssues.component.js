@@ -49,5 +49,4 @@ class GitHubIssues extends React.Component {
 GitHubIssues.displayName = Config.displayName
 GitHubIssues.propTypes = Config.propTypes
 
-export { GitHubIssues }
 export default GitHubIssues

@@ -1,10 +1,10 @@
-import GitHubIssuesComponent from './GitHubIssues.component'
+import GitHubIssues from './GitHubIssues.component'
 import Config from './GitHubIssues.component.config'
 
 import { mockSetState } from '../../TestUtils/mocking'
 
-const GitHubIssuesComponentMockedState = mockSetState(GitHubIssuesComponent)
-const getInstance = props => new GitHubIssuesComponentMockedState(props)
+const GitHubIssuesMockedState = mockSetState(GitHubIssues)
+const getInstance = props => new GitHubIssuesMockedState(props)
 
 jest
   .mock('./lib/Components/Issues/Issues.component', () => 'Issues')

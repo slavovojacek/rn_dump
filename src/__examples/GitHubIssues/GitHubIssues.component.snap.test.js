@@ -2,7 +2,7 @@ import React from 'react'
 import { Some } from '@threestup/monads'
 
 import { issueDef } from './defs'
-import GitHubIssuesComponent from './GitHubIssues.component'
+import GitHubIssues from './GitHubIssues.component'
 import Config from './GitHubIssues.component.config'
 
 import { assertSnapshots } from '../../TestUtils/snapshot'
@@ -64,5 +64,5 @@ describe('GitHubIssues Component Snapshots', () => {
     }
   ]
 
-  assertSnapshots(GitHubIssuesComponent, configs)
+  assertSnapshots(GitHubIssues, configs)
 })
