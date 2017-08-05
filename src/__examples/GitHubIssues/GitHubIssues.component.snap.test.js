@@ -10,19 +10,19 @@ import { assertSnapshots } from '../../TestUtils/snapshot'
 jest
   .mock('./lib/Components/Issues/Issues.component', () => 'Issues')
 
-describe('GitHubIssues View Snapshots', () => {
+describe('GitHubIssues Component Snapshots', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })
 
   const configs = [
     {
-      props: Config.defaultProps,
+      props: Config.testDefaultProps,
       desc: 'renders correctly'
     },
     {
       props: {
-        ...Config.defaultProps,
+        ...Config.testDefaultProps,
         issuesLoading: true,
         issues: Some([issueDef()]),
         error: Some('Oops!')
@@ -31,7 +31,7 @@ describe('GitHubIssues View Snapshots', () => {
     },
     {
       props: {
-        ...Config.defaultProps,
+        ...Config.testDefaultProps,
         issuesLoading: false,
         issues: Some([issueDef()]),
       },
@@ -39,7 +39,7 @@ describe('GitHubIssues View Snapshots', () => {
     },
     {
       props: {
-        ...Config.defaultProps,
+        ...Config.testDefaultProps,
         issuesLoading: false,
         issues: Some([]),
       },
@@ -47,7 +47,7 @@ describe('GitHubIssues View Snapshots', () => {
     },
     {
       props: {
-        ...Config.defaultProps,
+        ...Config.testDefaultProps,
         issuesLoading: false,
         error: Some('Oops!'),
       },
@@ -55,7 +55,7 @@ describe('GitHubIssues View Snapshots', () => {
     },
     {
       props: {
-        ...Config.defaultProps,
+        ...Config.testDefaultProps,
         issuesLoading: false,
         error: Some('Oops!'),
         issues: Some([this.issueDef]),

@@ -6,14 +6,13 @@ import Config from './Issue.component.config'
 import styles from './Issues.component.styles'
 
 import { Reactions } from '../Reactions/Reactions.component'
-import { noop } from '../../../../../Utils/misc'
-import { assertObject } from '../../../../../Utils/type'
+import { openUrl } from '../../../../../Utils/misc'
+import { throwIfNotObject } from '../../../../../Utils/type'
 
-const Issue = ({onPress = noop, issue, ...rest}) => {
-  // @TODO abstract away, call throwIfNotObject
-  if (assertObject(issue))
-    throw new Error(`issue has to be an object, instead got`)
+const Issue = ({issue, ...rest}) => {
+  throwIfNotObject(issue)
 
+  const onPress = () => openUrl(issue.url)
   const reactions = get_in(issue, 'reactions.nodes')
   const reactionsProps = {reactions, issue, ...rest}
 

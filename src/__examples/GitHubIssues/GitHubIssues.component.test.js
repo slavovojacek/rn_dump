@@ -12,7 +12,7 @@ jest
 describe('GitHubIssuesComponent', () => {
   beforeEach(() => {
     this.props = {
-      ...Config.defaultProps,
+      ...Config.testDefaultProps,
       // Add override properties, usually mock functions
     }
   })

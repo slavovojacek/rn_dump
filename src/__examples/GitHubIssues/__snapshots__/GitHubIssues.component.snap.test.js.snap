@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GitHubIssues View Snapshots renders correctly 1`] = `
+exports[`GitHubIssues Component Snapshots renders correctly 1`] = `
 <View>
   <Text
     accessible={true}
@@ -13,7 +13,7 @@ exports[`GitHubIssues View Snapshots renders correctly 1`] = `
 </View>
 `;
 
-exports[`GitHubIssues View Snapshots renders correctly when \`error\` present, regardless of what else is present 1`] = `
+exports[`GitHubIssues Component Snapshots renders correctly when error present, regardless of whether issues are present 1`] = `
 <View>
   <Text
     accessible={true}
@@ -31,7 +31,7 @@ exports[`GitHubIssues View Snapshots renders correctly when \`error\` present, r
 </View>
 `;
 
-exports[`GitHubIssues View Snapshots renders correctly when \`error\` present, regardless of whether issues are present 1`] = `
+exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`false\` and error present 1`] = `
 <View>
   <Text
     accessible={true}
@@ -49,61 +49,7 @@ exports[`GitHubIssues View Snapshots renders correctly when \`error\` present, r
 </View>
 `;
 
-exports[`GitHubIssues View Snapshots renders correctly when error present, regardless of whether issues are present 1`] = `
-<View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "red",
-      }
-    }
-  >
-    Oops!
-  </Text>
-</View>
-`;
-
-exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and \`error\` present 1`] = `
-<View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "red",
-      }
-    }
-  >
-    Oops!
-  </Text>
-</View>
-`;
-
-exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and error present 1`] = `
-<View>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    disabled={false}
-    ellipsizeMode="tail"
-    style={
-      Object {
-        "color": "red",
-      }
-    }
-  >
-    Oops!
-  </Text>
-</View>
-`;
-
-exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and issues are empty array 1`] = `
+exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`false\` and issues are empty array 1`] = `
 <View>
   <Issues
     issues={Array []}
@@ -111,15 +57,7 @@ exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`fals
 </View>
 `;
 
-exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and issues empty array 1`] = `
-<View>
-  <Issues
-    issues={Array []}
-  />
-</View>
-`;
-
-exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and issues present 1`] = `
+exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`false\` and issues present 1`] = `
 <View>
   <Issues
     issues={
@@ -137,7 +75,7 @@ exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`fals
 </View>
 `;
 
-exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`true\`, regardless of what else is present 1`] = `
+exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`true\`, regardless of what else is present 1`] = `
 <View>
   <Text
     accessible={true}

@@ -4,14 +4,14 @@ import renderer from 'react-test-renderer'
 
 import { assertGql } from './gql'
 
-import { isNull } from '../Utils/type'
+import { assertNull } from '../Utils/type'
 
 const assertSnapshot = (Component, props, desc, store = null) => {
   let getComponent = p => null
 
   // In theory, if things are done correctly, this (wrapping
   // a component in Provider with a store) should never be needed.
-  if (!isNull(store)) {
+  if (!assertNull(store)) {
     getComponent = p => (
       <Provider store={store}>
         <Component {...p}/>
@@ -31,7 +31,7 @@ const assertSnapshot = (Component, props, desc, store = null) => {
 
 const assertSnapshots = (Component, configs, store = null) => {
   configs.forEach(config => assertSnapshot(Component, config.props, config.desc, store))
-  if (!isNull(Component.gql)) assertGql(Component)
+  if (!assertNull(Component.gql)) assertGql(Component)
 }
 
 export { assertSnapshots }
