@@ -1,7 +1,7 @@
 import { None } from '@threestup/monads'
 import PropTypes from 'prop-types'
 
-const displayName = 'ApolloContainerView'
+const displayName = 'GitHubIssuesComponent'
 
 const propTypes = {
   issuesLoading: PropTypes.bool.isRequired,
@@ -9,12 +9,13 @@ const propTypes = {
   issues: PropTypes.object.isRequired,
 }
 
-const defaultProps = {
+// Only used for testing
+const testDefaultProps = {
   issuesLoading: false,
   error: None,
   issues: None,
 }
 
 export default {
-  displayName, propTypes, defaultProps
+  displayName, propTypes, testDefaultProps
 }

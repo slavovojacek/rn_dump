@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import gql from './GitHubIssues.graphql'
 
-const displayName = 'ApolloContainer'
+const displayName = 'GitHubIssuesContainer'
 
 const propTypes = {
   repoOwner: PropTypes.string.isRequired,

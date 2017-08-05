@@ -43,7 +43,7 @@ describe('GitHubIssues View Snapshots', () => {
         issuesLoading: false,
         issues: Some([]),
       },
-      desc: 'renders correctly when issuesLoading `false` and issues empty array'
+      desc: 'renders correctly when issuesLoading `false` and issues are empty array'
     },
     {
       props: {
@@ -51,7 +51,7 @@ describe('GitHubIssues View Snapshots', () => {
         issuesLoading: false,
         error: Some('Oops!'),
       },
-      desc: 'renders correctly when issuesLoading `false` and `error` present'
+      desc: 'renders correctly when issuesLoading `false` and error present'
     },
     {
       props: {
@@ -60,7 +60,7 @@ describe('GitHubIssues View Snapshots', () => {
         error: Some('Oops!'),
         issues: Some([this.issueDef]),
       },
-      desc: 'renders correctly when `error` present, regardless of what else is present'
+      desc: 'renders correctly when error present, regardless of whether issues are present'
     }
   ]
 

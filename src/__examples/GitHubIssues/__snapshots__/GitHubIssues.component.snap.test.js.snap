@@ -31,6 +31,42 @@ exports[`GitHubIssues View Snapshots renders correctly when \`error\` present, r
 </View>
 `;
 
+exports[`GitHubIssues View Snapshots renders correctly when \`error\` present, regardless of whether issues are present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Oops!
+  </Text>
+</View>
+`;
+
+exports[`GitHubIssues View Snapshots renders correctly when error present, regardless of whether issues are present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Oops!
+  </Text>
+</View>
+`;
+
 exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and \`error\` present 1`] = `
 <View>
   <Text
@@ -46,6 +82,32 @@ exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`fals
   >
     Oops!
   </Text>
+</View>
+`;
+
+exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and error present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Oops!
+  </Text>
+</View>
+`;
+
+exports[`GitHubIssues View Snapshots renders correctly when issuesLoading \`false\` and issues are empty array 1`] = `
+<View>
+  <Issues
+    issues={Array []}
+  />
 </View>
 `;
 
