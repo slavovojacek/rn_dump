@@ -4,7 +4,7 @@ import React from 'react'
 import { issueDef } from './defs'
 import GitHubIssues from './GitHubIssues.component'
 
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import { assertSnapshots } from '../../../TestUtils/snapshot'
 
 const testDefaultProps = {
   issuesLoading: false,
@@ -13,7 +13,7 @@ const testDefaultProps = {
 }
 
 jest
-  .mock('./lib/Components/Issues/Issues.component', () => 'Issues')
+  .mock('../../Dumb/Issues/Issues.component', () => 'Issues')
 
 describe('GitHubIssues Component Snapshots', () => {
   afterEach(() => {

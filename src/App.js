@@ -3,7 +3,8 @@ import { ApolloProvider } from 'react-apollo'
 import { connect } from 'react-redux'
 import { addNavigationHelpers } from 'react-navigation'
 
-import { store, client } from './state'
+import { store } from './state'
+import ApolloClient from './GraphQL/client'
 import { Navigation } from './Redux/Navigation/reducer'
 
 class App extends React.Component {
@@ -19,14 +20,10 @@ class App extends React.Component {
 
 const AppWithNavigationState = connect((state) => ({navigation: state.navigation}))(App)
 
-class Root extends React.Component {
-  render () {
-    return (
-      <ApolloProvider store={store} client={client}>
-        <AppWithNavigationState />
-      </ApolloProvider>
-    )
-  }
-}
+const Root = () => (
+  <ApolloProvider store={store} client={ApolloClient}>
+    <AppWithNavigationState />
+  </ApolloProvider>
+)
 
 export default Root

@@ -1,11 +1,10 @@
+import { throwIfNotBoolean, throwIfNotOption } from '@openmaths/utils'
 import React from 'react'
 import { View, Text } from 'react-native'
 
 import Config from './GitHubIssues.component.config'
 import styles from './GitHubIssues.component.styles'
-import Issues from './lib/Components/Issues/Issues.component'
-
-import { throwIfNotBoolean, throwIfNotOption } from '../../Utils/type'
+import Issues from '../../Dumb/Issues/Issues.component'
 
 const IssuesLoading = () => <Text>Issues are currently loading...</Text>
 const Error = ({text = 'Error'}) => <Text style={styles.error}>{text}</Text>

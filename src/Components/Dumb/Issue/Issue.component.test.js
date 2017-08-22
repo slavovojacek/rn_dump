@@ -3,8 +3,8 @@ import { shallow } from 'enzyme'
 
 import Issue from './Issue.component'
 
-import { openUrl } from '../../../../../Utils/misc'
-import { issueDef } from '../../../defs/index'
+import { openUrl } from '../../../Utils/misc'
+import { issueDef } from '../../Smart/GitHubIssues/defs'
 
 const testDefaultProps = {
   issue: issueDef(),
@@ -12,7 +12,7 @@ const testDefaultProps = {
 
 jest
   .mock('../Reactions/Reactions.component', () => 'Reactions')
-  .mock('../../../../../Utils/misc', () => ({
+  .mock('../../../Utils/misc', () => ({
     openUrl: jest.fn()
   }))
 

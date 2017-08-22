@@ -1,3 +1,4 @@
+import { throwIfNotObject, noop } from '@openmaths/utils'
 import React from 'react'
 import { Text } from 'react-native'
 
@@ -5,8 +6,6 @@ import Config from './Reaction.component.config'
 import style from './Reaction.component.styles'
 
 import { ReactionType, AllowedReactionTypes } from '../Reactions/Reactions.component'
-import { noop } from '../../../../../Utils/misc'
-import { throwIfNotObject } from '../../../../../Utils/type'
 
 const Reaction = (props) => {
   const {

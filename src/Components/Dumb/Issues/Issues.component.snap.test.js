@@ -1,7 +1,7 @@
 import Issues from './Issues.component'
 
-import { issueDef } from '../../../defs'
-import { assertSnapshots } from '../../../../../TestUtils/snapshot'
+import { issueDef } from '../../Smart/GitHubIssues/defs'
+import { assertSnapshots } from '../../../TestUtils/snapshot'
 
 const testDefaultProps = {
   issues: [],

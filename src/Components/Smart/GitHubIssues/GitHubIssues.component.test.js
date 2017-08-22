@@ -2,7 +2,7 @@ import { None } from '@threestup/monads'
 
 import GitHubIssues from './GitHubIssues.component'
 
-import { mockSetState } from '../../TestUtils/mocking'
+import { mockSetState } from '../../../TestUtils/mocking'
 
 const GitHubIssuesMockedState = mockSetState(GitHubIssues)
 const getInstance = props => new GitHubIssuesMockedState(props)
@@ -14,7 +14,7 @@ const testDefaultProps = {
 }
 
 jest
-  .mock('./lib/Components/Issues/Issues.component', () => 'Issues')
+  .mock('../../Dumb/Issues/Issues.component', () => 'Issues')
 
 describe('GitHubIssuesComponent', () => {
   beforeEach(() => {

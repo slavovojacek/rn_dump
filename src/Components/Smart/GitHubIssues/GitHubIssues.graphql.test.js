@@ -1,6 +1,6 @@
 import { GitHubIssues } from './GitHubIssues.container'
 
-import { assertGql } from '../../TestUtils/gql'
+import { assertGql } from '../../../TestUtils/gql'
 
 jest
   .mock('./GitHubIssues.component', () => 'GitHubIssuesComponent')

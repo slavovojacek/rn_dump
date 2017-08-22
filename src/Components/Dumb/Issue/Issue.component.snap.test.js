@@ -1,7 +1,7 @@
 import Issue from './Issue.component'
 
-import { issueDef } from '../../../defs'
-import { assertSnapshots } from '../../../../../TestUtils/snapshot'
+import { issueDef } from '../../Smart/GitHubIssues/defs/index'
+import { assertSnapshots } from '../../../TestUtils/snapshot'
 
 const testDefaultProps = {
   issue: issueDef(),
@@ -9,7 +9,7 @@ const testDefaultProps = {
 
 jest
   .mock('../Reactions/Reactions.component', () => 'Reactions')
-  .mock('../../../../../Utils/misc', () => ({
+  .mock('../../../Utils/misc', () => ({
     openUrl: jest.fn()
   }))
 

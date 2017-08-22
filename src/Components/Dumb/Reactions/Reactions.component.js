@@ -6,7 +6,7 @@ import Config from './Reactions.component.config'
 import styles from './Reactions.component.styles'
 
 import Reaction from '../Reaction/Reaction.component'
-import { ReactionType, AllowedReactionTypes } from '../../Constants/ReactionType'
+import { ReactionType, AllowedReactionTypes } from '../../../Constants/ReactionType'
 
 class Reactions extends React.Component {
   static hasMyReaction = (reactions = None, type = ReactionType.DEFAULT, me = None) => {

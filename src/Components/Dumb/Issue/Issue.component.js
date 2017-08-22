@@ -1,3 +1,4 @@
+import { throwIfNotObject } from '@openmaths/utils'
 import { get_in } from '@threestup/monads'
 import React from 'react'
 import { View, Text } from 'react-native'
@@ -6,8 +7,7 @@ import Config from './Issue.component.config'
 import styles from './Issues.component.styles'
 
 import Reactions from '../Reactions/Reactions.component'
-import { openUrl } from '../../../../../Utils/misc'
-import { throwIfNotObject } from '../../../../../Utils/type'
+import { openUrl } from '../../../Utils/misc'
 
 const Issue = ({issue, ...rest}) => {
   throwIfNotObject(issue)
