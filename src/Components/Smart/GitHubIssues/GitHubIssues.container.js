@@ -5,7 +5,10 @@ import { compose, graphql } from 'react-apollo'
 import Config from './GitHubIssues.container.config'
 import GitHubIssuesComponent from './GitHubIssues.component'
 
-const GitHubIssues = props => <GitHubIssuesComponent {...props} />
+const GitHubIssues = props => {
+  console.log(props)
+  return <GitHubIssuesComponent {...props} />
+}
 
 GitHubIssues.gql = Config.gql
 GitHubIssues.propTypes = Config.propTypes

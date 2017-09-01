@@ -32,6 +32,24 @@ exports[`AwesomeComponent Snapshots renders correctly when loading 1`] = `
 </View>
 `;
 
+exports[`AwesomeComponent Snapshots renders correctly when not loading and error present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "red",
+      }
+    }
+  >
+    Err!
+  </Text>
+</View>
+`;
+
 exports[`AwesomeComponent Snapshots renders correctly when not loading and username not present 1`] = `
 <View>
   <Text

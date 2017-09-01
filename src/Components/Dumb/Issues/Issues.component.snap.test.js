@@ -18,14 +18,14 @@ describe('Issues Component Snapshots', () => {
   const configs = [
     {
       props: testDefaultProps,
-      desc: 'renders correctly'
+      desc: 'renders correctly',
     },
     {
       props: {
         ...testDefaultProps,
         issues: [issueDef()],
       },
-      desc: 'renders correctly when issues present'
+      desc: 'renders correctly when issues present',
     },
   ]
 

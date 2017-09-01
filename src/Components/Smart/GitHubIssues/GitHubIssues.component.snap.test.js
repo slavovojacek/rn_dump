@@ -23,16 +23,16 @@ describe('GitHubIssues Component Snapshots', () => {
   const configs = [
     {
       props: testDefaultProps,
-      desc: 'renders correctly'
+      desc: 'renders correctly',
     },
     {
       props: {
         ...testDefaultProps,
         issuesLoading: true,
         issues: Some([issueDef()]),
-        error: Some('Oops!')
+        error: Some('Oops!'),
       },
-      desc: 'renders correctly when issuesLoading `true`, regardless of what else is present'
+      desc: 'renders correctly when issuesLoading `true`, regardless of what else is present',
     },
     {
       props: {
@@ -40,7 +40,7 @@ describe('GitHubIssues Component Snapshots', () => {
         issuesLoading: false,
         issues: Some([issueDef()]),
       },
-      desc: 'renders correctly when issuesLoading `false` and issues present'
+      desc: 'renders correctly when issuesLoading `false` and issues present',
     },
     {
       props: {
@@ -48,7 +48,7 @@ describe('GitHubIssues Component Snapshots', () => {
         issuesLoading: false,
         issues: Some([]),
       },
-      desc: 'renders correctly when issuesLoading `false` and issues are empty array'
+      desc: 'renders correctly when issuesLoading `false` and issues are empty array',
     },
     {
       props: {
@@ -56,7 +56,7 @@ describe('GitHubIssues Component Snapshots', () => {
         issuesLoading: false,
         error: Some('Oops!'),
       },
-      desc: 'renders correctly when issuesLoading `false` and error present'
+      desc: 'renders correctly when issuesLoading `false` and error present',
     },
     {
       props: {
@@ -65,8 +65,8 @@ describe('GitHubIssues Component Snapshots', () => {
         error: Some('Oops!'),
         issues: Some([this.issueDef]),
       },
-      desc: 'renders correctly when error present, regardless of whether issues are present'
-    }
+      desc: 'renders correctly when error present, regardless of whether issues are present',
+    },
   ]
 
   assertSnapshots(GitHubIssues, configs)

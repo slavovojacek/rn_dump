@@ -1,37 +1,36 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import renderer from 'react-test-renderer'
 
-import { assertGql } from './gql'
+import { mockSetState } from './mocking'
 
-import { assertNull } from '../Utils/type'
+const assertSnapshot = (C, config) => {
+  const {props, state, desc} = config
 
-const assertSnapshot = (Component, props, desc, store = null) => {
-  let getComponent = p => null
+  let Component
 
-  // In theory, if things are done correctly, this (wrapping
-  // a component in Provider with a store) should never be needed.
-  if (!assertNull(store)) {
-    getComponent = p => (
-      <Provider store={store}>
-        <Component {...p}/>
-      </Provider>
-    )
-  } else {
-    getComponent = p => <Component {...p}/>
+  try {
+    const CWithMockState = mockSetState(C)
+    Component = new CWithMockState(props)
+
+    if (state) {
+      Component.setState(state)
+    }
+  } catch (e) {
+    Component = C(props)
   }
+
+  const RenderedComponent = Component.render ? Component.render() : Component
 
   test(desc, () => {
     const tree = renderer
-      .create(getComponent(props))
+      .create(RenderedComponent)
       .toJSON()
     expect(tree).toMatchSnapshot()
   })
 }
 
-const assertSnapshots = (Component, configs, store = null) => {
-  configs.forEach(config => assertSnapshot(Component, config.props, config.desc, store))
-  if (!assertNull(Component.gql)) assertGql(Component)
+const assertSnapshots = (Component, configs) => {
+  configs.forEach(config => assertSnapshot(Component, config))
 }
 
 export { assertSnapshots }

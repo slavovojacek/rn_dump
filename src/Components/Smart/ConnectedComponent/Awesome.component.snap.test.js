@@ -1,8 +1,8 @@
 import React from 'react'
 import { Some, None } from '@threestup/monads'
 
-import { AwesomeComponent } from './Awesome.component'
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import AwesomeComponent from './Awesome.component'
+import { assertSnapshots } from '../../../TestUtils/snapshot'
 
 describe('AwesomeComponent Snapshots', () => {
   const config = [
@@ -32,6 +32,14 @@ describe('AwesomeComponent Snapshots', () => {
         showLoading: false
       },
       desc: 'renders correctly when not loading and username not present'
+    },
+    {
+      props: {
+        ...AwesomeComponent.defaultProps,
+        error: Some('Err!'),
+        showLoading: false
+      },
+      desc: 'renders correctly when not loading and error present'
     }
   ]
 
