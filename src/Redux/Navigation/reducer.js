@@ -1,8 +1,8 @@
 import { StackNavigator } from 'react-navigation'
 
-import ApolloScreen from '../../__examples/ApolloContainer/Apollo.container'
-import GitHubIssues from '../../Components/Smart/GitHubIssues/GitHubIssues.container'
-import LoginScreen from '../../__examples/LoginContainer/Login.container'
+import ApolloScreen from '../../Containers/ApolloContainer/Apollo.container'
+import GitHubIssues from '../../Containers/GitHubIssues/GitHubIssues.container'
+import LoginScreen from '../../Containers/LoginContainer/Login.container'
 
 export const Navigation = StackNavigator({
   Login: {screen: LoginScreen},

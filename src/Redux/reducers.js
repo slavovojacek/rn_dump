@@ -3,7 +3,7 @@ import { reducer as FormReducer } from 'redux-form'
 
 import NavigationReducer from './Navigation/reducer'
 import ApolloClient from '../GraphQL/client'
-import LoginReducer from '../__examples/LoginContainer/lib/reducer'
+import LoginReducer from '../Containers/LoginContainer/lib/reducer'
 
 const reducers = combineReducers({
   navigation: NavigationReducer,

@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects'
 
-import LoginSaga from '../__examples/LoginContainer/lib/saga'
+import LoginSaga from '../Containers/LoginContainer/lib/saga'
 
 export default function* main () {
   yield all([
