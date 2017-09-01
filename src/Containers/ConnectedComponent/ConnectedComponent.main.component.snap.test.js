@@ -1,25 +1,32 @@
 import React from 'react'
 import { Some, None } from '@threestup/monads'
 
-import AwesomeComponent from './Awesome.component'
+import { props as testDefaultProps } from './defaults'
+import ConnectedComponent from './ConnectedComponent.main.component'
 import { assertSnapshots } from '../../TestUtils/snapshot'
 
-describe('AwesomeComponent Snapshots', () => {
+jest
+  .mock('./ConnectedComponent.main.component.styles', () => ({
+    error: {},
+    username: {},
+  }))
+
+describe('ConnectedComponent Snapshots', () => {
   const config = [
     {
-      props: AwesomeComponent.defaultProps,
+      props: testDefaultProps,
       desc: 'renders correctly'
     },
     {
       props: {
-        ...AwesomeComponent.defaultProps,
+        ...testDefaultProps,
         showLoading: true
       },
       desc: 'renders correctly when loading'
     },
     {
       props: {
-        ...AwesomeComponent.defaultProps,
+        ...testDefaultProps,
         username: Some('John Doe'),
         showLoading: false
       },
@@ -27,7 +34,7 @@ describe('AwesomeComponent Snapshots', () => {
     },
     {
       props: {
-        ...AwesomeComponent.defaultProps,
+        ...testDefaultProps,
         username: None,
         showLoading: false
       },
@@ -35,7 +42,7 @@ describe('AwesomeComponent Snapshots', () => {
     },
     {
       props: {
-        ...AwesomeComponent.defaultProps,
+        ...testDefaultProps,
         error: Some('Err!'),
         showLoading: false
       },
@@ -43,5 +50,5 @@ describe('AwesomeComponent Snapshots', () => {
     }
   ]
 
-  assertSnapshots(AwesomeComponent, config)
+  assertSnapshots(ConnectedComponent, config)
 })

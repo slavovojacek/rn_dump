@@ -1,37 +1,31 @@
-import { Some, None } from '@threestup/monads'
+import { Some } from '@threestup/monads'
 import React from 'react'
 
-import { issueDefault } from './defaults'
-import GitHubIssues from './GitHubIssues.component'
+import { issueDefault, props as testDefaultProps } from './defaults'
+import GitHubIssues from './GitHubIssues.main.component'
 
 import { assertSnapshots } from '../../TestUtils/snapshot'
 import { assertGql } from '../../TestUtils/gql'
 
 jest
   .mock('../../Components/Issues/Issues.component', () => 'Issues')
-  .mock('./GitHubIssues.component.styles', () => ({
+  .mock('./GitHubIssues.main.component.styles', () => ({
     error: {}
   }))
 
 describe('GitHubIssues Component Snapshots', () => {
-  this.props = {
-    issuesLoading: false,
-    error: None,
-    issues: None,
-  }
-
   afterEach(() => {
     jest.clearAllMocks()
   })
 
   const configs = [
     {
-      props: this.props,
+      props: testDefaultProps,
       desc: 'renders correctly',
     },
     {
       props: {
-        ...this.props,
+        ...testDefaultProps,
         issuesLoading: true,
         issues: Some([issueDefault()]),
         error: Some('Oops!'),
@@ -40,7 +34,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...this.props,
+        ...testDefaultProps,
         issuesLoading: false,
         issues: Some([issueDefault()]),
       },
@@ -48,7 +42,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...this.props,
+        ...testDefaultProps,
         issuesLoading: false,
         issues: Some([]),
       },
@@ -56,7 +50,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...this.props,
+        ...testDefaultProps,
         issuesLoading: false,
         error: Some('Oops!'),
       },
@@ -64,7 +58,7 @@ describe('GitHubIssues Component Snapshots', () => {
     },
     {
       props: {
-        ...this.props,
+        ...testDefaultProps,
         issuesLoading: false,
         issues: Some([issueDefault]),
         error: Some('Oops!'),

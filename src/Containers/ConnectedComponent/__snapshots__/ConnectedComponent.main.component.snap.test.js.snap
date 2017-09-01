@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConnectedComponent Snapshots renders correctly 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={Object {}}
+  >
+    N/A
+  </Text>
+</View>
+`;
+
+exports[`ConnectedComponent Snapshots renders correctly when loading 1`] = `<View />`;
+
+exports[`ConnectedComponent Snapshots renders correctly when not loading and error present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={Object {}}
+  >
+    Err!
+  </Text>
+</View>
+`;
+
+exports[`ConnectedComponent Snapshots renders correctly when not loading and username not present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={Object {}}
+  >
+    N/A
+  </Text>
+</View>
+`;
+
+exports[`ConnectedComponent Snapshots renders correctly when not loading and username present 1`] = `
+<View>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={Object {}}
+  >
+    John Doe
+  </Text>
+</View>
+`;

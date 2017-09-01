@@ -1,3 +1,5 @@
+import { None } from '@threestup/monads'
+
 const userDefault = (id = '') => ({id})
 
 const reactionDefault = (override = {}) => {
@@ -22,6 +24,12 @@ const issueDefault = (override = {}) => {
   return {...def, ...override}
 }
 
+const props = {
+  issuesLoading: false,
+  issues: None,
+  error: None,
+}
+
 export {
-  userDefault, reactionDefault, issueDefault
+  userDefault, reactionDefault, issueDefault, props
 }

@@ -2,29 +2,30 @@ import { Some } from '@threestup/monads'
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-import AwesomeComponent from './Awesome.component'
+import { props as testDefaultProps } from './defaults'
+import AwesomeComponent from './ConnectedComponent.main.component'
 
 storiesOf('AwesomeComponent', module)
   .add('default', () => (
-    <AwesomeComponent {...AwesomeComponent.defaultProps} />
+    <AwesomeComponent {...testDefaultProps} />
   ))
   .add('loading', () => {
     const props = {
-      ...AwesomeComponent.defaultProps,
+      ...testDefaultProps,
       showLoading: true
     }
     return <AwesomeComponent {...props} />
   })
   .add('error', () => {
     const props = {
-      ...AwesomeComponent.defaultProps,
+      ...testDefaultProps,
       error: Some('Err!')
     }
     return <AwesomeComponent {...props} />
   })
   .add('data present', () => {
     const props = {
-      ...AwesomeComponent.defaultProps,
+      ...testDefaultProps,
       username: Some('Some User')
     }
     return <AwesomeComponent {...props} />

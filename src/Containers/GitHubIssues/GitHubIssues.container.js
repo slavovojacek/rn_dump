@@ -2,7 +2,7 @@ import { Some } from '@threestup/monads'
 import React from 'react'
 import { compose, graphql } from 'react-apollo'
 
-import GitHubIssues from './GitHubIssues.component'
+import GitHubIssues from './GitHubIssues.main.component'
 
 const mapPropsToOptions = (props) => {
   // `defaultProps` are not applied at this point, therefore we have to do an explicit merge

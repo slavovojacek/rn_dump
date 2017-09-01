@@ -2,7 +2,7 @@ import { throwIfNotBoolean, throwIfNotOption } from '@openmaths/utils'
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import styles from './GitHubIssues.component.styles'
+import styles from './GitHubIssues.main.component.styles'
 import gql from './GitHubIssues.graphql'
 import Issues from '../../Components/Issues/Issues.component'
 

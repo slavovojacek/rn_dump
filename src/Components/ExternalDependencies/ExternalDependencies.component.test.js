@@ -29,7 +29,7 @@ describe('AwesomeComponent', () => {
   })
 
   describe('instance', () => {
-    test('componentDidMount throws if logIntoConsole not a Function', () => {
+    test('componentDidMount throws if logIntoConsole is not of type Function', () => {
       const newProps = {...this.props, logIntoConsole: ''}
       let subject = getInstance(newProps)
       expect(() => subject.componentDidMount()).toThrow(TypeError)
@@ -48,4 +48,5 @@ describe('AwesomeComponent', () => {
       expect(SomethingElseExternal.anotherAwesomeMethod).toHaveBeenCalledWith('val')
     })
   })
+
 })

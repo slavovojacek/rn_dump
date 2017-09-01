@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import Component from './Awesome.component'
+import ConnectedComponent from './ConnectedComponent.main.component'
 import { apiFetch } from './lib/saga'
 
 const mapStateToProps = ({AwesomeState}) => ({
@@ -15,4 +15,4 @@ const mapDispatchToProps = {
   apiFetch
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Component)
+export default connect(mapStateToProps, mapDispatchToProps)(ConnectedComponent)
