@@ -2,12 +2,10 @@ import React from 'react'
 import { View, Button } from 'react-native'
 import { reduxForm, Field } from 'redux-form'
 
-import Config from './Login.form.config'
-
 import renderField from '../../FormUtils/field'
 import { required } from '../../FormUtils/validation'
 
-let LoginForm = ({pristine, submitting, handleSubmit, onSubmit, style}) => {
+const LoginForm = ({pristine, submitting, handleSubmit, onSubmit, style}) => {
   return (
     <View style={style}>
       <Field name="email"
@@ -24,10 +22,6 @@ let LoginForm = ({pristine, submitting, handleSubmit, onSubmit, style}) => {
     </View>
   )
 }
-
-LoginForm.displayName = Config.displayName
-LoginForm.propTypes = Config.propTypes
-LoginForm.defaultProps = Config.defaultProps
 
 export { LoginForm }
 

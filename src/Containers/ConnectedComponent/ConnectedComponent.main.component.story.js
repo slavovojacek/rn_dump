@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react-native'
 import { props as testDefaultProps } from './defaults'
 import AwesomeComponent from './ConnectedComponent.main.component'
 
-storiesOf('AwesomeComponent', module)
+storiesOf('ConnectedComponent', module)
   .add('default', () => (
     <AwesomeComponent {...testDefaultProps} />
   ))

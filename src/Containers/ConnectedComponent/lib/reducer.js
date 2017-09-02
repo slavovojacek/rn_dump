@@ -1,5 +1,5 @@
-import typeToReducer from 'type-to-reducer'
 import { Some, None } from '@threestup/monads'
+import typeToReducer from 'type-to-reducer'
 
 export const initialState = {
   data: None,
