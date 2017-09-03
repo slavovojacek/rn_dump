@@ -1,9 +1,10 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-import AwesomeComponent from './ExternalDependencies.component'
+import { props as testDefaultProps } from './defaults'
+import ExternalDependencies from './ExternalDependencies.component'
 
-storiesOf('AwesomeComponent', module)
+storiesOf('ExternalDependencies', module)
   .add('default', () => (
-    <AwesomeComponent {...AwesomeComponent.defaultProps} />
+    <ExternalDependencies {...testDefaultProps} />
   ))

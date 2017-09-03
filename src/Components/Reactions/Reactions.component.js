@@ -1,3 +1,4 @@
+import { throwIfNotObject } from '@openmaths/utils'
 import { Some, None, get_in } from '@threestup/monads'
 import React from 'react'
 import { View } from 'react-native'
@@ -22,7 +23,11 @@ class Reactions extends React.Component {
   }
 
   render () {
-    const {reactions = None, me = None, ...rest} = this.props
+    const {issue, me = None, ...rest} = this.props
+
+    throwIfNotObject(issue)
+
+    const reactions = get_in(issue, 'reactions.nodes')
 
     // To make React keys happy
     const uniqueStr = Math

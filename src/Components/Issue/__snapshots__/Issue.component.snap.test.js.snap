@@ -57,19 +57,10 @@ exports[`Issue Component Snapshots renders correctly with specific title and url
       }
     }
   >
-    
+    Some Title
   </Text>
   <Reactions
     issue={
-      Object {
-        "bodyText": "",
-        "id": "",
-        "reactions": Array [],
-        "title": "",
-        "url": "",
-      }
-    }
-    issues={
       Object {
         "bodyText": "",
         "id": "",

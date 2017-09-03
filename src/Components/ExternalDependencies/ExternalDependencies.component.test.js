@@ -1,11 +1,12 @@
 import React from 'react'
 
-import AwesomeComponent from './ExternalDependencies.component'
+import ExternalDependencies from './ExternalDependencies.component'
 
+import { props as testDefaultProps } from './defaults'
 import SomethingExternal from './lib/SomethingExternal'
 import SomethingElseExternal from './lib/SomethingElseExternal'
 
-const getInstance = p => new AwesomeComponent(p)
+const getInstance = p => new ExternalDependencies(p)
 
 jest
   .mock('./lib/SomethingExternal', () => ({
@@ -15,10 +16,11 @@ jest
     anotherAwesomeMethod: jest.fn()
   }))
 
-describe('AwesomeComponent', () => {
+describe('ExternalDependencies', () => {
 
   beforeEach(() => {
     this.props = {
+      ...testDefaultProps,
       logIntoConsole: jest.fn()
     }
   })

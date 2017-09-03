@@ -1,7 +1,8 @@
 import { Some } from '@threestup/monads'
 import React from 'react'
 
-import { issueDefault, props as testDefaultProps } from './defaults'
+import { props as testDefaultProps } from './defaults'
+import { issueDefault } from '../../Components/Issue/defaults'
 import GitHubIssues from './GitHubIssues.main.component'
 
 import { assertSnapshots } from '../../TestUtils/snapshot'
@@ -13,14 +14,14 @@ jest
     error: {}
   }))
 
-describe('GitHubIssues Component Snapshots', () => {
+describe('GitHubIssues Snapshots', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })
 
   const configs = [
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       desc: 'renders correctly',
     },
     {

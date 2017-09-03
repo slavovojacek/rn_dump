@@ -8,21 +8,21 @@ import { assertSnapshots } from '../../TestUtils/snapshot'
 describe('AwesomeComponent Snapshots', () => {
   const configs = [
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       desc: 'renders correctly with default props'
     },
     {
-      props: testDefaultProps,
-      state: testDefaultState,
+      props: {...testDefaultProps},
+      state: {...testDefaultState},
       desc: 'renders correctly with initial state'
     },
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       state: {...testDefaultState, color: 'blue'},
       desc: 'renders correctly when state.color is blue'
     },
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       state: {...testDefaultState, isWarningVisible: true},
       desc: 'renders correctly when state.isWarningVisible is true'
     },

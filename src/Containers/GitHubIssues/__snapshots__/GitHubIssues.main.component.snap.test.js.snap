@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GitHubIssues Component Snapshots matches Query or Mutation 1`] = `
+exports[`GitHubIssues Snapshots matches Query or Mutation 1`] = `
 Object {
   "definitions": Array [
     Object {
@@ -329,7 +329,7 @@ Object {
 }
 `;
 
-exports[`GitHubIssues Component Snapshots matches Query or Mutation 2`] = `
+exports[`GitHubIssues Snapshots matches Query or Mutation 2`] = `
 Object {
   "definitions": Array [
     Object {
@@ -507,7 +507,7 @@ Object {
 }
 `;
 
-exports[`GitHubIssues Component Snapshots matches Query or Mutation 3`] = `
+exports[`GitHubIssues Snapshots matches Query or Mutation 3`] = `
 Object {
   "definitions": Array [
     Object {
@@ -685,7 +685,7 @@ Object {
 }
 `;
 
-exports[`GitHubIssues Component Snapshots renders correctly 1`] = `
+exports[`GitHubIssues Snapshots renders correctly 1`] = `
 <View>
   <Text
     accessible={true}
@@ -698,7 +698,7 @@ exports[`GitHubIssues Component Snapshots renders correctly 1`] = `
 </View>
 `;
 
-exports[`GitHubIssues Component Snapshots renders correctly when error present, regardless of whether issues are present 1`] = `
+exports[`GitHubIssues Snapshots renders correctly when error present, regardless of whether issues are present 1`] = `
 <View>
   <Text
     accessible={true}
@@ -712,7 +712,7 @@ exports[`GitHubIssues Component Snapshots renders correctly when error present, 
 </View>
 `;
 
-exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`false\` and error present 1`] = `
+exports[`GitHubIssues Snapshots renders correctly when issuesLoading \`false\` and error present 1`] = `
 <View>
   <Text
     accessible={true}
@@ -726,7 +726,7 @@ exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \
 </View>
 `;
 
-exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`false\` and issues are empty array 1`] = `
+exports[`GitHubIssues Snapshots renders correctly when issuesLoading \`false\` and issues are empty array 1`] = `
 <View>
   <Issues
     issues={Array []}
@@ -734,7 +734,7 @@ exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \
 </View>
 `;
 
-exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`false\` and issues present 1`] = `
+exports[`GitHubIssues Snapshots renders correctly when issuesLoading \`false\` and issues present 1`] = `
 <View>
   <Issues
     issues={
@@ -752,7 +752,7 @@ exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \
 </View>
 `;
 
-exports[`GitHubIssues Component Snapshots renders correctly when issuesLoading \`true\`, regardless of what else is present 1`] = `
+exports[`GitHubIssues Snapshots renders correctly when issuesLoading \`true\`, regardless of what else is present 1`] = `
 <View>
   <Text
     accessible={true}

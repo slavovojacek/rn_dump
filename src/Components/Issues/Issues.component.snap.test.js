@@ -1,11 +1,8 @@
 import Issues from './Issues.component'
 
-import { issueDefault } from '../../Containers/GitHubIssues/defaults/index'
+import { props as testDefaultProps } from './defaults'
+import { issueDefault } from '../Issue/defaults'
 import { assertSnapshots } from '../../TestUtils/snapshot'
-
-const testDefaultProps = {
-  issues: [],
-}
 
 jest
   .mock('../Issue/Issue.component', () => 'Issue')
@@ -17,7 +14,7 @@ describe('Issues Component Snapshots', () => {
 
   const configs = [
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       desc: 'renders correctly',
     },
     {
@@ -25,7 +22,14 @@ describe('Issues Component Snapshots', () => {
         ...testDefaultProps,
         issues: [issueDefault()],
       },
-      desc: 'renders correctly when issues present',
+      desc: 'renders correctly when 1 issue present',
+    },
+    {
+      props: {
+        ...testDefaultProps,
+        issues: [issueDefault(), issueDefault(), issueDefault()],
+      },
+      desc: 'renders correctly when 3 issues present',
     },
   ]
 

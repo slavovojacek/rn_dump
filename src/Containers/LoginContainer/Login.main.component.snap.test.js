@@ -10,7 +10,7 @@ jest
 describe('Login Snapshots', () => {
   const configs = [
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       desc: 'renders correctly'
     }
   ]

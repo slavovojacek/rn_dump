@@ -3,8 +3,7 @@ import { get_in } from '@threestup/monads'
 import React from 'react'
 import { View, Text } from 'react-native'
 
-import Config from './Issue.component.config'
-import styles from './Issues.component.styles'
+import styles from './Issue.component.styles'
 
 import Reactions from '../Reactions/Reactions.component'
 import { openUrl } from '../../Utils/misc'
@@ -24,7 +23,6 @@ const Issue = ({issue, ...rest}) => {
   )
 }
 
-Issue.displayName = Config.displayName
-Issue.propTypes = Config.propTypes
+Issue.displayName = 'Issue'
 
 export default Issue

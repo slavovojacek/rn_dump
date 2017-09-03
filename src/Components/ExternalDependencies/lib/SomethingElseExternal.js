@@ -1,3 +1,5 @@
+import { noop } from '@openmaths/utils'
+
 export default {
-  anotherAwesomeMethod: someArg => null
+  anotherAwesomeMethod: noop
 }

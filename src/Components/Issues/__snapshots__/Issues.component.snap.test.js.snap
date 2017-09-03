@@ -2,8 +2,46 @@
 
 exports[`Issues Component Snapshots renders correctly 1`] = `<View />`;
 
-exports[`Issues Component Snapshots renders correctly when issues present 1`] = `
+exports[`Issues Component Snapshots renders correctly when 1 issue present 1`] = `
 <View>
+  <Issue
+    issue={
+      Object {
+        "bodyText": "",
+        "id": "",
+        "reactions": Array [],
+        "title": "",
+        "url": "",
+      }
+    }
+  />
+</View>
+`;
+
+exports[`Issues Component Snapshots renders correctly when 3 issues present 1`] = `
+<View>
+  <Issue
+    issue={
+      Object {
+        "bodyText": "",
+        "id": "",
+        "reactions": Array [],
+        "title": "",
+        "url": "",
+      }
+    }
+  />
+  <Issue
+    issue={
+      Object {
+        "bodyText": "",
+        "id": "",
+        "reactions": Array [],
+        "title": "",
+        "url": "",
+      }
+    }
+  />
   <Issue
     issue={
       Object {

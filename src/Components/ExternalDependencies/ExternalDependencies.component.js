@@ -5,7 +5,7 @@ import { Text } from 'react-native'
 import SomethingExternal from './lib/SomethingExternal'
 import SomethingElseExternal from './lib/SomethingElseExternal'
 
-class AwesomeComponent extends Component {
+class ExternalDependencies extends Component {
   static displayName = 'ExternalDependencies'
 
   componentDidMount () {
@@ -28,4 +28,4 @@ class AwesomeComponent extends Component {
   }
 }
 
-export default AwesomeComponent
+export default ExternalDependencies

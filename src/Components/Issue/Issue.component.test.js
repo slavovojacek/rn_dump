@@ -4,11 +4,7 @@ import { shallow } from 'enzyme'
 import Issue from './Issue.component'
 
 import { openUrl } from '../../Utils/misc'
-import { issueDefault } from '../../Containers/GitHubIssues/defaults/index'
-
-const testDefaultProps = {
-  issue: issueDefault(),
-}
+import { issueDefault, props as testDefaultProps } from './defaults'
 
 jest
   .mock('../Reactions/Reactions.component', () => 'Reactions')
@@ -18,10 +14,7 @@ jest
 
 describe('Issue Component', () => {
   beforeEach(() => {
-    this.props = {
-      ...testDefaultProps,
-      // Add override properties, usually mock functions
-    }
+    this.props = {...testDefaultProps}
   })
 
   afterEach(() => {
@@ -32,7 +25,7 @@ describe('Issue Component', () => {
   describe('DOM Interaction', () => {
     test('', () => {
       const issue = issueDefault({id: 'Some Id', url: 'https://some.url'})
-      const newProps = {...this.props, issue }
+      const newProps = {...this.props, issue}
       const subject = shallow(<Issue {...newProps}/>)
         .find('Text')
         .at(0)

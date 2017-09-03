@@ -14,7 +14,7 @@ jest
 describe('ConnectedComponent Snapshots', () => {
   const config = [
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       desc: 'renders correctly'
     },
     {

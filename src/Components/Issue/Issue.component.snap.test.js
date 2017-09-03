@@ -1,11 +1,7 @@
 import Issue from './Issue.component'
 
-import { issueDefault } from '../../Containers/GitHubIssues/defaults'
+import { issueDefault, props as testDefaultProps } from './defaults'
 import { assertSnapshots } from '../../TestUtils/snapshot'
-
-const testDefaultProps = {
-  issue: issueDefault(),
-}
 
 jest
   .mock('../Reactions/Reactions.component', () => 'Reactions')
@@ -20,13 +16,13 @@ describe('Issue Component Snapshots', () => {
 
   const configs = [
     {
-      props: testDefaultProps,
+      props: {...testDefaultProps},
       desc: 'renders correctly'
     },
     {
       props: {
         ...testDefaultProps,
-        issues: issueDefault({title: 'Some Title', url: 'https://some.url'}),
+        issue: issueDefault({title: 'Some Title', url: 'https://some.url'}),
       },
       desc: 'renders correctly with specific title and url'
     },

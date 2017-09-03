@@ -1,16 +1,17 @@
 import React from 'react'
 
-import AwesomeComponent from './ExternalDependencies.component'
+import ExternalDependencies from './ExternalDependencies.component'
+import { props as testDefaultProps } from './defaults'
 
 import { assertSnapshots } from '../../TestUtils/snapshot'
 
-describe('AwesomeComponent Snapshots', () => {
+describe('ExternalDependencies Snapshots', () => {
   const config = [
     {
-      props: AwesomeComponent.defaultProps,
+      props: {...testDefaultProps},
       desc: 'renders correctly'
     }
   ]
 
-  assertSnapshots(AwesomeComponent, config)
+  assertSnapshots(ExternalDependencies, config)
 })
