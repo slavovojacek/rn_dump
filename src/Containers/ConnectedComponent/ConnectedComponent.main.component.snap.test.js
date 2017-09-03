@@ -3,7 +3,7 @@ import { Some, None } from '@threestup/monads'
 
 import { props as testDefaultProps } from './defaults'
 import ConnectedComponent from './ConnectedComponent.main.component'
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import { assertSnapshots } from '../../TestUtils'
 
 jest
   .mock('./ConnectedComponent.main.component.styles', () => ({

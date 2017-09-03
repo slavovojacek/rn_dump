@@ -6,7 +6,7 @@ import { props as testDefaultProps } from './defaults'
 import { issueDefault } from '../Issue/defaults'
 import { reactionDefault, userDefault } from '../Reaction/defaults'
 import { ReactionType } from '../../Constants/ReactionType'
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import { assertSnapshots } from '../../TestUtils'
 
 jest
   .mock('../Reaction/Reaction.component', () => 'Reaction')

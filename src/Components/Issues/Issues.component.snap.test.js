@@ -2,7 +2,7 @@ import Issues from './Issues.component'
 
 import { props as testDefaultProps } from './defaults'
 import { issueDefault } from '../Issue/defaults'
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import { assertSnapshots } from '../../TestUtils'
 
 jest
   .mock('../Issue/Issue.component', () => 'Issue')

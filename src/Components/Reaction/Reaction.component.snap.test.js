@@ -4,7 +4,7 @@ import Reaction from './Reaction.component'
 
 import { props as testDefaultProps } from './defaults'
 import { ReactionType } from '../../Constants/ReactionType'
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import { assertSnapshots } from '../../TestUtils'
 
 describe('Reaction Snapshots', () => {
   afterEach(() => {

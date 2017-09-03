@@ -45,6 +45,7 @@ const assertSnapshot = (C, config) => {
 
 const assertSnapshots = (Component, configs) => {
   configs.forEach(config => assertSnapshot(Component, config))
+  // if (Component.gql) assertGql(Component)
 }
 
 export { assertSnapshots }

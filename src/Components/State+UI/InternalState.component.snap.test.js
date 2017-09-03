@@ -3,7 +3,7 @@ import React from 'react'
 import InternalState from './InternalState.component'
 import { props as testDefaultProps, state as testDefaultState } from './defaults'
 
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import { assertSnapshots } from '../../TestUtils'
 
 describe('AwesomeComponent Snapshots', () => {
   const configs = [

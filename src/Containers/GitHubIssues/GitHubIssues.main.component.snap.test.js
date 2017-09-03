@@ -5,8 +5,7 @@ import { props as testDefaultProps } from './defaults'
 import { issueDefault } from '../../Components/Issue/defaults'
 import GitHubIssues from './GitHubIssues.main.component'
 
-import { assertSnapshots } from '../../TestUtils/snapshot'
-import { assertGql } from '../../TestUtils/gql'
+import { assertSnapshots, assertGql } from '../../TestUtils'
 
 jest
   .mock('../../Components/Issues/Issues.component', () => 'Issues')

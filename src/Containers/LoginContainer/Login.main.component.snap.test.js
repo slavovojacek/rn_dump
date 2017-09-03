@@ -2,7 +2,7 @@ import React from 'react'
 
 import Login from './Login.main.component'
 import { props as testDefaultProps } from './defaults'
-import { assertSnapshots } from '../../TestUtils/snapshot'
+import { assertSnapshots } from '../../TestUtils'
 
 jest
   .mock('../LoginForm/Login.form', () => 'LoginForm')
