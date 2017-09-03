@@ -8,7 +8,7 @@ exports[`Login Snapshots renders correctly 1`] = `
     }
   }
 >
-  <View
+  <LoginForm
     onSubmit={[Function]}
     style={
       Object {

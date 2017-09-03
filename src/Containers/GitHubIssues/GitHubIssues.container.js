@@ -5,7 +5,6 @@ import { compose, graphql } from 'react-apollo'
 import GitHubIssues from './GitHubIssues.main.component'
 
 const mapPropsToOptions = (props) => {
-  // `defaultProps` are not applied at this point, therefore we have to do an explicit merge
   const {repoOwner = 'Threestup', repoName = 'monads', limit = 20} = props
 
   return {

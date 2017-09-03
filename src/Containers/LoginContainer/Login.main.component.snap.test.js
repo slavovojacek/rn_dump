@@ -5,7 +5,7 @@ import { props as testDefaultProps } from './defaults'
 import { assertSnapshots } from '../../TestUtils/snapshot'
 
 jest
-  .mock('../LoginForm/Login.form', () => 'View')
+  .mock('../LoginForm/Login.form', () => 'LoginForm')
 
 describe('Login Snapshots', () => {
   const configs = [

@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { View, Text } from 'react-native'
 
-import Config from './Awesome.component.config'
+import style, { defaultTextColor } from './InternalState.component.styles'
 
-class AwesomeComponent extends Component {
+class InternalState extends Component {
+  displayName = 'InternalState'
+
   constructor (props) {
     super(props)
-    this.state = {color: props.color, isWarningVisible: props.isWarningVisible}
+    const {color = defaultTextColor, isWarningVisible = false} = props
+    this.state = {color, isWarningVisible}
   }
 
   changeColor = newColor => {
@@ -19,11 +22,12 @@ class AwesomeComponent extends Component {
 
   render () {
     const {color, isWarningVisible} = this.state
-    const coloredTextStyle = {color}
+    const coloredTextStyle = style.colouredText(color)
+    const changeColor = () => this.changeColor('blue')
 
     return (
       <View>
-        <Text style={coloredTextStyle} onPress={() => this.changeColor('blue')}>
+        <Text style={coloredTextStyle} onPress={changeColor}>
           Click to change the color of this text to blue
         </Text>
 
@@ -35,9 +39,4 @@ class AwesomeComponent extends Component {
   }
 }
 
-AwesomeComponent.displayName = Config.displayName
-AwesomeComponent.propTypes = Config.propTypes
-AwesomeComponent.defaultProps = Config.defaultProps
-
-export { AwesomeComponent }
-export default AwesomeComponent
+export default InternalState
