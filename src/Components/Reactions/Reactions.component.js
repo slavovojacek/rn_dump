@@ -3,13 +3,14 @@ import { Some, None, get_in } from '@threestup/monads'
 import React from 'react'
 import { View } from 'react-native'
 
-import Config from './Reactions.component.config'
 import styles from './Reactions.component.styles'
 
 import Reaction from '../Reaction/Reaction.component'
 import { ReactionType, AllowedReactionTypes } from '../../Constants/ReactionType'
 
 class Reactions extends React.Component {
+  static displayName = 'IssuesComponent'
+
   static hasMyReaction = (reactions = None, type = ReactionType.DEFAULT, me = None) => {
     const myUserId = me.map(_ => _.id).unwrap_or('')
 
@@ -49,9 +50,5 @@ class Reactions extends React.Component {
   }
 }
 
-Reactions.displayName = Config.displayName
-Reactions.propTypes = Config.propTypes
-
-export { ReactionType, AllowedReactionTypes }
 export default Reactions
 

@@ -1,15 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Issues Component Snapshots renders correctly 1`] = `<View />`;
+exports[`Issues Snapshots renders correctly 1`] = `<View />`;
 
-exports[`Issues Component Snapshots renders correctly when 1 issue present 1`] = `
+exports[`Issues Snapshots renders correctly when 1 issue present 1`] = `
 <View>
   <Issue
     issue={
       Object {
         "bodyText": "",
         "id": "",
-        "reactions": Array [],
+        "reactions": Object {
+          "nodes": Array [],
+        },
         "title": "",
         "url": "",
       }
@@ -18,14 +20,16 @@ exports[`Issues Component Snapshots renders correctly when 1 issue present 1`] =
 </View>
 `;
 
-exports[`Issues Component Snapshots renders correctly when 3 issues present 1`] = `
+exports[`Issues Snapshots renders correctly when 3 issues present 1`] = `
 <View>
   <Issue
     issue={
       Object {
         "bodyText": "",
         "id": "",
-        "reactions": Array [],
+        "reactions": Object {
+          "nodes": Array [],
+        },
         "title": "",
         "url": "",
       }
@@ -36,7 +40,9 @@ exports[`Issues Component Snapshots renders correctly when 3 issues present 1`] 
       Object {
         "bodyText": "",
         "id": "",
-        "reactions": Array [],
+        "reactions": Object {
+          "nodes": Array [],
+        },
         "title": "",
         "url": "",
       }
@@ -47,7 +53,9 @@ exports[`Issues Component Snapshots renders correctly when 3 issues present 1`] 
       Object {
         "bodyText": "",
         "id": "",
-        "reactions": Array [],
+        "reactions": Object {
+          "nodes": Array [],
+        },
         "title": "",
         "url": "",
       }

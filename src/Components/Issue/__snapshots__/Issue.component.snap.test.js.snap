@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Issue Component Snapshots renders correctly 1`] = `
+exports[`Issue Snapshots renders correctly 1`] = `
 <View>
   <Text
     accessible={true}
@@ -27,17 +27,23 @@ exports[`Issue Component Snapshots renders correctly 1`] = `
       Object {
         "bodyText": "",
         "id": "",
-        "reactions": Array [],
+        "reactions": Object {
+          "nodes": Array [],
+        },
         "title": "",
         "url": "",
       }
     }
-    reactions={_None {}}
+    reactions={
+      _Some {
+        "_": Array [],
+      }
+    }
   />
 </View>
 `;
 
-exports[`Issue Component Snapshots renders correctly with specific title and url 1`] = `
+exports[`Issue Snapshots renders correctly with specific title and url 1`] = `
 <View>
   <Text
     accessible={true}
@@ -64,12 +70,18 @@ exports[`Issue Component Snapshots renders correctly with specific title and url
       Object {
         "bodyText": "",
         "id": "",
-        "reactions": Array [],
+        "reactions": Object {
+          "nodes": Array [],
+        },
         "title": "Some Title",
         "url": "https://some.url",
       }
     }
-    reactions={_None {}}
+    reactions={
+      _Some {
+        "_": Array [],
+      }
+    }
   />
 </View>
 `;

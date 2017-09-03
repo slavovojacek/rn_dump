@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reaction Snapshots renders correctly when type is \`THUMBS_DOWN\` 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  onPress={[Function]}
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "fontSize": 14,
+      "height": 40,
+      "marginRight": 5,
+      "width": 40,
+    }
+  }
+>
+  👎
+</Text>
+`;
+
+exports[`Reaction Snapshots renders correctly when type is \`THUMBS_DOWN\` and pressed is \`true\` 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  onPress={[Function]}
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "fontSize": 14,
+      "height": 40,
+      "marginRight": 5,
+      "width": 40,
+    }
+  }
+>
+  👎
+</Text>
+`;
+
+exports[`Reaction Snapshots renders correctly when type is \`THUMBS_UP\` 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  onPress={[Function]}
+  style={
+    Object {
+      "backgroundColor": "transparent",
+      "fontSize": 14,
+      "height": 40,
+      "marginRight": 5,
+      "width": 40,
+    }
+  }
+>
+  👍
+</Text>
+`;
+
+exports[`Reaction Snapshots renders correctly when type is \`THUMBS_UP\` and pressed is \`true\` 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  disabled={false}
+  ellipsizeMode="tail"
+  onPress={[Function]}
+  style={
+    Object {
+      "backgroundColor": "blue",
+      "fontSize": 14,
+      "height": 40,
+      "marginRight": 5,
+      "width": 40,
+    }
+  }
+>
+  👍
+</Text>
+`;

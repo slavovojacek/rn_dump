@@ -9,7 +9,7 @@ jest
     openUrl: jest.fn()
   }))
 
-describe('Issue Component Snapshots', () => {
+describe('Issue Snapshots', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })

@@ -4,7 +4,9 @@ const issueDefault = (override = {}) => {
     title: '',
     url: '',
     bodyText: '',
-    reactions: []
+    reactions: {
+      nodes: []
+    }
   }
 
   return {...def, ...override}

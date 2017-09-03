@@ -742,7 +742,9 @@ exports[`GitHubIssues Snapshots renders correctly when issuesLoading \`false\` a
         Object {
           "bodyText": "",
           "id": "",
-          "reactions": Array [],
+          "reactions": Object {
+            "nodes": Array [],
+          },
           "title": "",
           "url": "",
         },

@@ -7,7 +7,7 @@ import { assertSnapshots } from '../../TestUtils/snapshot'
 jest
   .mock('../Issue/Issue.component', () => 'Issue')
 
-describe('Issues Component Snapshots', () => {
+describe('Issues Snapshots', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })

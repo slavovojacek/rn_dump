@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reactions Snapshots renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Reaction
+    pressed={false}
+    type="THUMBS_UP"
+  />
+  <Reaction
+    pressed={false}
+    type="THUMBS_DOWN"
+  />
+</View>
+`;
+
+exports[`Reactions Snapshots renders correctly when reactions present 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Reaction
+    pressed={false}
+    type="THUMBS_UP"
+  />
+  <Reaction
+    pressed={false}
+    type="THUMBS_DOWN"
+  />
+</View>
+`;
+
+exports[`Reactions Snapshots renders correctly when user present and reactions present 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Reaction
+    pressed={false}
+    type="THUMBS_UP"
+  />
+  <Reaction
+    pressed={false}
+    type="THUMBS_DOWN"
+  />
+</View>
+`;
+
+exports[`Reactions Snapshots renders correctly when user present and reactions present with matching type and userId 1`] = `
+<View
+  style={
+    Object {
+      "flexDirection": "row",
+    }
+  }
+>
+  <Reaction
+    pressed={true}
+    type="THUMBS_UP"
+  />
+  <Reaction
+    pressed={false}
+    type="THUMBS_DOWN"
+  />
+</View>
+`;

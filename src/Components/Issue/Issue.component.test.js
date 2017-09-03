@@ -12,7 +12,7 @@ jest
     openUrl: jest.fn()
   }))
 
-describe('Issue Component', () => {
+describe('Issue', () => {
   beforeEach(() => {
     this.props = {...testDefaultProps}
   })

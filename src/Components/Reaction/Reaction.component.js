@@ -5,7 +5,7 @@ import { Text } from 'react-native'
 import Config from './Reaction.component.config'
 import style from './Reaction.component.styles'
 
-import { ReactionType, AllowedReactionTypes } from '../Reactions/Reactions.component'
+import { ReactionType, AllowedReactionTypes } from '../../Constants/ReactionType'
 
 const Reaction = (props) => {
   const {
@@ -36,7 +36,7 @@ const Reaction = (props) => {
       config.text = '👎'
       break
     default:
-      throw new Error(
+      throw new TypeError(
         `Type of Reaction has to be one of ${AllowedReactionTypes}`
       )
       break
