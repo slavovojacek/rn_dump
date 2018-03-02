@@ -8,7 +8,7 @@ import styles from './Issue.component.styles'
 import Reactions from '../Reactions/Reactions.component'
 import { openUrl } from '../../Utils/misc'
 
-const Issue = ({issue, ...rest}) => {
+const Issue = ({issue = issueDefault(), ...rest}) => {
   throwIfNotObject(issue)
 
   const onPress = () => openUrl(issue.url)
