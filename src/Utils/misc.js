@@ -1,9 +1,5 @@
 import { Linking } from 'react-native'
 
-const noop = () => {
-  console.info(`Noop called`)
-}
-
 const openUrl = url => {
   Linking
     .openURL(url)
@@ -11,5 +7,5 @@ const openUrl = url => {
 }
 
 export {
-  noop, openUrl
+  openUrl
 }
